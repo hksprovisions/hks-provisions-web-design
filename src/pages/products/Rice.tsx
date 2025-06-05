@@ -1,10 +1,9 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Grain, Globe, Award, Truck } from 'lucide-react';
+import { ArrowLeft, Wheat, Globe, Award, Truck } from 'lucide-react';
 
 const Rice = () => {
   const riceVarieties = [
@@ -72,7 +71,7 @@ const Rice = () => {
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center">
-                  <Grain className="w-6 h-6 text-purple-600 mr-3" />
+                  <Wheat className="w-6 h-6 text-purple-600 mr-3" />
                   <span className="text-gray-700">Premium Quality</span>
                 </div>
                 <div className="flex items-center">
