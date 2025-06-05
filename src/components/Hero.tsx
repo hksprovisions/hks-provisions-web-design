@@ -10,7 +10,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(42, 42, 111, 0.7), rgba(54, 47, 111, 0.8)), url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `linear-gradient(rgba(99, 102, 241, 0.7), rgba(139, 92, 246, 0.8)), url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
         }}
       />
       
@@ -19,7 +19,7 @@ const Hero = () => {
         <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in">
           Essentials That Nourish.
           <br />
-          <span className="text-[#DEDDF5]">Quality You Can Trust.</span>
+          <span className="text-purple-200">Quality You Can Trust.</span>
         </h1>
         
         <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto opacity-90 animate-fade-in">
@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
           <Button 
             size="lg"
-            className="bg-[#5353AB] hover:bg-[#362F6F] text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl"
+            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl"
             onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View Products
@@ -40,7 +40,7 @@ const Hero = () => {
           <Button 
             size="lg"
             variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-[#2A2A6F] px-8 py-4 text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl"
+            className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-4 text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl"
             onClick={() => window.open('https://wa.me/917397248389?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
           >
             Get Quote Now
@@ -50,19 +50,19 @@ const Hero = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16 animate-fade-in">
           <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-[#DEDDF5]">500+</div>
+            <div className="text-3xl lg:text-4xl font-bold text-purple-200">500+</div>
             <div className="text-sm lg:text-base opacity-80">Happy Clients</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-[#DEDDF5]">50+</div>
+            <div className="text-3xl lg:text-4xl font-bold text-purple-200">50+</div>
             <div className="text-sm lg:text-base opacity-80">Countries Served</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-[#DEDDF5]">1000+</div>
+            <div className="text-3xl lg:text-4xl font-bold text-purple-200">1000+</div>
             <div className="text-sm lg:text-base opacity-80">Tons Traded</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-[#DEDDF5]">99%</div>
+            <div className="text-3xl lg:text-4xl font-bold text-purple-200">99%</div>
             <div className="text-sm lg:text-base opacity-80">Quality Assured</div>
           </div>
         </div>

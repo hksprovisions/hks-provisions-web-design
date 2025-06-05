@@ -34,22 +34,22 @@ const About = () => {
 
   const values = [
     {
-      icon: <CheckCircle className="w-8 h-8 text-[#5353AB]" />,
+      icon: <CheckCircle className="w-8 h-8 text-purple-600" />,
       title: 'Quality Assurance',
       description: 'Every product undergoes rigorous quality checks before reaching our customers.'
     },
     {
-      icon: <Globe className="w-8 h-8 text-[#5353AB]" />,
+      icon: <Globe className="w-8 h-8 text-purple-600" />,
       title: 'Global Standards',
       description: 'We maintain international quality standards in all our operations.'
     },
     {
-      icon: <Users className="w-8 h-8 text-[#5353AB]" />,
+      icon: <Users className="w-8 h-8 text-purple-600" />,
       title: 'Customer First',
       description: 'Building long-term relationships through exceptional service and reliability.'
     },
     {
-      icon: <Award className="w-8 h-8 text-[#5353AB]" />,
+      icon: <Award className="w-8 h-8 text-purple-600" />,
       title: 'Excellence',
       description: 'Committed to excellence in everything we do, from sourcing to delivery.'
     }
@@ -60,7 +60,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         {/* About Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#2A2A6F] mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
             About HKS Provisions
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -73,7 +73,7 @@ const About = () => {
         {/* Company Story */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <h3 className="text-3xl font-bold text-[#2A2A6F] mb-6">Our Story</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Founded with a passion for connecting premium agricultural products with global markets, 
               HKS Provisions has grown from a local trading company to a trusted international partner. 
@@ -85,12 +85,12 @@ const About = () => {
               we maintain complete control over the supply chain.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-[#DEDDF5] rounded-lg">
-                <div className="text-2xl font-bold text-[#2A2A6F]">500+</div>
+              <div className="text-center p-4 bg-purple-50 rounded-lg">
+                <div className="text-2xl font-bold text-purple-600">500+</div>
                 <div className="text-sm text-gray-600">Happy Clients</div>
               </div>
-              <div className="text-center p-4 bg-[#DEDDF5] rounded-lg">
-                <div className="text-2xl font-bold text-[#2A2A6F]">50+</div>
+              <div className="text-center p-4 bg-purple-50 rounded-lg">
+                <div className="text-2xl font-bold text-purple-600">50+</div>
                 <div className="text-sm text-gray-600">Countries</div>
               </div>
             </div>
@@ -102,16 +102,16 @@ const About = () => {
               alt="Agricultural fields"
               className="rounded-lg shadow-xl w-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2A2A6F]/20 to-transparent rounded-lg"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent rounded-lg"></div>
           </div>
         </div>
 
         {/* Company Timeline */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-[#2A2A6F] mb-12 text-center">Our Journey</h3>
+          <h3 className="text-3xl font-bold text-gray-800 mb-12 text-center">Our Journey</h3>
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#DEDDF5] hidden lg:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-purple-200 hidden lg:block"></div>
             
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -120,10 +120,10 @@ const About = () => {
                     <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow">
                       <CardContent className="p-6">
                         <div className="flex items-center mb-3">
-                          <div className="w-12 h-12 bg-[#5353AB] text-white rounded-full flex items-center justify-center font-bold text-lg">
+                          <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
                             {milestone.year.slice(-2)}
                           </div>
-                          <h4 className="text-xl font-bold text-[#2A2A6F] ml-4">{milestone.title}</h4>
+                          <h4 className="text-xl font-bold text-gray-800 ml-4">{milestone.title}</h4>
                         </div>
                         <p className="text-gray-600">{milestone.description}</p>
                       </CardContent>
@@ -131,7 +131,7 @@ const About = () => {
                   </div>
                   
                   {/* Timeline Dot */}
-                  <div className="hidden lg:block w-4 h-4 bg-[#5353AB] rounded-full relative z-10 mx-4"></div>
+                  <div className="hidden lg:block w-4 h-4 bg-purple-600 rounded-full relative z-10 mx-4"></div>
                   
                   <div className="lg:w-1/2"></div>
                 </div>
@@ -142,7 +142,7 @@ const About = () => {
 
         {/* Company Values */}
         <div>
-          <h3 className="text-3xl font-bold text-[#2A2A6F] mb-12 text-center">Our Values</h3>
+          <h3 className="text-3xl font-bold text-gray-800 mb-12 text-center">Our Values</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 shadow-lg">
@@ -150,7 +150,7 @@ const About = () => {
                   <div className="flex justify-center mb-4">
                     {value.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-[#2A2A6F] mb-3">{value.title}</h4>
+                  <h4 className="text-lg font-bold text-gray-800 mb-3">{value.title}</h4>
                   <p className="text-gray-600 text-sm">{value.description}</p>
                 </CardContent>
               </Card>
