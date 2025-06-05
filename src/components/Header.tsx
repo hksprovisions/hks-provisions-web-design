@@ -10,8 +10,8 @@ const Header = () => {
   const products = [
     { name: 'Tea', href: '/products/tea' },
     { name: 'Rice', href: '/products/rice' },
-    { name: 'Wheat', href: '/products/wheat' },
-    { name: 'Spices', href: '/products/spices' }
+    { name: 'Wheat', href: '/products/wheat', component: 'Wheat' },
+    { name: 'Spices', href: '/products/spices', component: 'Spices' }
   ];
 
   return (

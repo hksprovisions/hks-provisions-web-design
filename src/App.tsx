@@ -8,6 +8,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Tea from "./pages/products/Tea";
 import Rice from "./pages/products/Rice";
+import Wheat from "./pages/products/Wheat";
+import Spices from "./pages/products/Spices";
+import ProductDetail from "./pages/products/ProductDetail";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +24,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/products/tea" element={<Tea />} />
           <Route path="/products/rice" element={<Rice />} />
+          <Route path="/products/wheat" element={<Wheat />} />
+          <Route path="/products/spices" element={<Spices />} />
+          <Route path="/products/:category/:subcategory/:product" element={<ProductDetail />} />
+          <Route path="/products/:category/:product" element={<ProductDetail />} />
+          <Route path="/products/:category" element={<ProductDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
