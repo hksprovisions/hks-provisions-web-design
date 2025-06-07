@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -41,7 +42,7 @@ const Hero = () => {
           <Button 
             size="lg"
             className="bg-white text-slate-800 hover:bg-slate-100 border-2 border-white px-8 py-4 text-lg font-semibold rounded-xl transition-all transform hover:scale-105 shadow-elegant"
-            onClick={() => window.open('https://wa.me/917397248389?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
+            onClick={() => window.open('https://wa.me/+917397248389?text=Hi,%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
           >
             Get Instant Quote
           </Button>
