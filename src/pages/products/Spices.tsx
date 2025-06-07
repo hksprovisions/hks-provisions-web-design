@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -73,7 +72,7 @@ const Spices = () => {
                         variant="outline"
                         size="icon"
                         className="border-[#5353AB] text-[#5353AB] hover:bg-[#5353AB] hover:text-white"
-                        onClick={() => window.open(`https://wa.me/917397248389?text=Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(product.name)}.%20Please%20share%20the%20latest%20quote.`, '_blank')}
+                        onClick={() => window.open(`https://wa.me/917397248359?text=Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(product.name)}.%20Please%20share%20the%20latest%20quote.`, '_blank')}
                       >
                         <ArrowRight className="w-4 h-4" />
                       </Button>

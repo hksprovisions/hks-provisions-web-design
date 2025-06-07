@@ -104,7 +104,7 @@ const Products = () => {
                     variant="outline"
                     size="icon"
                     className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
-                    onClick={() => window.open(`https://wa.me/917397248389?text=${product.whatsappText}`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/917397248359?text=${product.whatsappText}`, '_blank')}
                   >
                     <ArrowRight className="w-4 h-4" />
                   </Button>

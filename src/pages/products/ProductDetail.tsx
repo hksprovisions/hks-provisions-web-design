@@ -44,7 +44,7 @@ const ProductDetail = () => {
     .slice(0, 4);
 
   const whatsappText = `Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(product.name)}.%20Please%20share%20the%20latest%20quote.`;
-  const whatsappUrl = `https://wa.me/917397248389?text=${whatsappText}`;
+  const whatsappUrl = `https://wa.me/917397248359?text=${whatsappText}`;
 
   return (
     <div className="min-h-screen bg-white">

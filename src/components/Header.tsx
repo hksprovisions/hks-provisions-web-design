@@ -64,7 +64,7 @@ const Header = () => {
             
             <Button 
               className="gradient-primary text-white px-6 py-2 rounded-xl transition-all transform hover:scale-105 shadow-professional"
-              onClick={() => window.open('https://wa.me/917397248389?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
+              onClick={() => window.open('https://wa.me/917397248359?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
             >
               Get Quote
             </Button>
@@ -103,7 +103,7 @@ const Header = () => {
               <a href="#contact" className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1">Contact</a>
               <Button 
                 className="gradient-primary text-white mt-4 mx-2 rounded-xl"
-                onClick={() => window.open('https://wa.me/917397248389?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
+                onClick={() => window.open('https://wa.me/917397248359?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
               >
                 Get Quote
               </Button>
