@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -21,37 +20,43 @@ const Tea = () => {
       id: 'bp', 
       name: 'BP (Broken Pekoe)', 
       description: 'Large leaf grade with excellent brewing strength',
-      color: 'bg-amber-500'
+      color: 'bg-amber-500',
+      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'bop', 
       name: 'BOP (Broken Orange Pekoe)', 
       description: 'Premium grade with bold granules and malty flavor',
-      color: 'bg-orange-500'
+      color: 'bg-orange-500',
+      image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'bps', 
       name: 'BPS (Broken Pekoe Souchong)', 
       description: 'Medium grade with good color and strength',
-      color: 'bg-yellow-600'
+      color: 'bg-yellow-600',
+      image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'bopsm', 
       name: 'BOPSM (BOP Small Medium)', 
       description: 'Small-medium grade perfect for quick brewing',
-      color: 'bg-red-500'
+      color: 'bg-red-500',
+      image: 'https://images.unsplash.com/photo-1597318281675-17516f892648?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'pd', 
       name: 'PD (Pekoe Dust)', 
       description: 'Fine grade ideal for strong milk tea',
-      color: 'bg-brown-500'
+      color: 'bg-brown-500',
+      image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'dust', 
       name: 'Dust Grade', 
       description: 'Finest grade for instant color and strength',
-      color: 'bg-gray-600'
+      color: 'bg-gray-600',
+      image: 'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -61,21 +66,24 @@ const Tea = () => {
       name: 'Lite Blend',
       description: 'Light and refreshing blend perfect for everyday consumption',
       features: ['Mild strength', 'Golden color', 'Smooth taste'],
-      color: 'bg-green-500'
+      color: 'bg-green-500',
+      image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 'gold',
       name: 'Gold Blend',
       description: 'Premium balanced blend with rich aroma and full body',
       features: ['Medium strength', 'Rich golden brew', 'Aromatic'],
-      color: 'bg-yellow-500'
+      color: 'bg-yellow-500',
+      image: 'https://images.unsplash.com/photo-1597318285942-38d93c7fad7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 'premium',
       name: 'Premium Blend',
       description: 'Superior quality blend for connoisseurs and export markets',
       features: ['Full strength', 'Deep amber color', 'Complex flavor'],
-      color: 'bg-purple-600'
+      color: 'bg-purple-600',
+      image: 'https://images.unsplash.com/photo-1564890716881-4b5862ff3d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -172,7 +180,15 @@ Thank you!`;
             {ctcGrades.map((grade) => (
               <Card key={grade.id} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0">
                 <CardContent className="p-0">
-                  <div className={`${grade.color} h-2 w-full`}></div>
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={grade.image} 
+                      alt={grade.name}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent`}></div>
+                    <div className={`${grade.color} h-2 w-full absolute bottom-0`}></div>
+                  </div>
                   <div className="p-8">
                     <h3 className="text-2xl font-bold text-[#2A2A6F] mb-3">{grade.name}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{grade.description}</p>
@@ -214,7 +230,15 @@ Thank you!`;
             {blends.map((blend) => (
               <Card key={blend.id} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 bg-gradient-to-br from-white to-gray-50">
                 <CardContent className="p-0">
-                  <div className={`${blend.color} h-3 w-full`}></div>
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={blend.image} 
+                      alt={blend.name}
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent`}></div>
+                    <div className={`${blend.color} h-3 w-full absolute bottom-0`}></div>
+                  </div>
                   <div className="p-8">
                     <h3 className="text-2xl font-bold text-[#2A2A6F] mb-3">{blend.name}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{blend.description}</p>
@@ -257,10 +281,10 @@ Thank you!`;
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="shadow-2xl border-0 bg-white">
-              <CardContent className="p-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
+            <Card className="shadow-2xl border-0 bg-white overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="p-10">
                     <h3 className="text-2xl font-bold text-[#2A2A6F] mb-6">Design Your Blend</h3>
                     <div className="space-y-6">
                       <div>
@@ -301,44 +325,53 @@ Thank you!`;
                         />
                       </div>
                     </div>
+                    
+                    <div className="mt-8 text-center">
+                      <Button 
+                        onClick={handleCustomBlendQuote}
+                        className="bg-[#5353AB] hover:bg-[#2A2A6F] text-white px-12 py-4 text-lg font-semibold w-full"
+                      >
+                        Get Custom Blend Quote
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Button>
+                    </div>
                   </div>
                   
-                  <div className="bg-gradient-to-br from-[#5353AB] to-[#362F6F] text-white p-8 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4">Why Choose Custom Blends?</h4>
-                    <div className="space-y-4">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span>Tailored to your exact taste preferences</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span>Perfect for your target market</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span>Competitive pricing for bulk orders</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span>Quality assurance and consistency</span>
-                      </div>
+                  <div className="relative bg-gradient-to-br from-[#5353AB] to-[#362F6F] text-white p-8 lg:p-10">
+                    <div className="absolute inset-0 opacity-20">
+                      <img 
+                        src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        alt="Custom tea blending"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    
-                    <div className="mt-8 p-4 bg-white/20 rounded-lg">
-                      <p className="text-sm font-medium">Minimum Order Quantity</p>
-                      <p className="text-2xl font-bold">1 MT</p>
+                    <div className="relative z-10">
+                      <h4 className="text-xl font-bold mb-4">Why Choose Custom Blends?</h4>
+                      <div className="space-y-4">
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span>Tailored to your exact taste preferences</span>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span>Perfect for your target market</span>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span>Competitive pricing for bulk orders</span>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span>Quality assurance and consistency</span>
+                        </div>
+                      </div>
+                      
+                      <div className="mt-8 p-4 bg-white/20 rounded-lg backdrop-blur-sm">
+                        <p className="text-sm font-medium">Minimum Order Quantity</p>
+                        <p className="text-2xl font-bold">1 MT</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="mt-8 text-center">
-                  <Button 
-                    onClick={handleCustomBlendQuote}
-                    className="bg-[#5353AB] hover:bg-[#2A2A6F] text-white px-12 py-4 text-lg font-semibold"
-                  >
-                    Get Custom Blend Quote
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
                 </div>
               </CardContent>
             </Card>
