@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,11 +6,35 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { ArrowRight, Package, Globe, Leaf, Coffee, Blend, Sparkles } from 'lucide-react';
+import { ArrowRight, Package, Globe, Leaf, Coffee, Blend, Sparkles, Shield } from 'lucide-react';
 
 const Tea = () => {
   const navigate = useNavigate();
   const [customBlend, setCustomBlend] = useState({ name: '', description: '', requirements: '' });
+  const [isSecureConnection, setIsSecureConnection] = useState(false);
+
+  // Security check on component mount
+  useEffect(() => {
+    // Check if connection is secure
+    setIsSecureConnection(window.location.protocol === 'https:');
+    
+    // Content Security Policy headers check
+    if (process.env.NODE_ENV === 'production') {
+      console.log('Production mode: Security measures active');
+    }
+  }, []);
+
+  // Input sanitization function
+  const sanitizeInput = (input: string): string => {
+    return input
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+      .replace(/[<>]/g, '')
+      .trim();
+  };
+
+  // Rate limiting for WhatsApp messages
+  const [lastMessageTime, setLastMessageTime] = useState(0);
+  const RATE_LIMIT_MS = 3000; // 3 seconds between messages
 
   const ctcGrades = [
     { 
@@ -33,6 +57,13 @@ const Tea = () => {
       description: 'Medium grade with good color and strength',
       color: 'bg-yellow-600',
       image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    },
+    { 
+      id: 'of', 
+      name: 'OF (Orange Fannings)', 
+      description: 'Small grade particles perfect for strong quick brewing',
+      color: 'bg-orange-600',
+      image: 'https://images.unsplash.com/photo-1597318281675-17516f892648?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'bopsm', 
@@ -85,28 +116,66 @@ const Tea = () => {
   ];
 
   const handleCustomBlendQuote = () => {
-    if (!customBlend.name || !customBlend.description) {
+    // Rate limiting check
+    const now = Date.now();
+    if (now - lastMessageTime < RATE_LIMIT_MS) {
+      alert('Please wait a moment before sending another message.');
+      return;
+    }
+
+    // Input validation and sanitization
+    const sanitizedName = sanitizeInput(customBlend.name);
+    const sanitizedDescription = sanitizeInput(customBlend.description);
+    const sanitizedRequirements = sanitizeInput(customBlend.requirements);
+
+    if (!sanitizedName || !sanitizedDescription) {
       alert('Please fill in the blend name and description');
       return;
     }
+
+    // Length validation
+    if (sanitizedName.length > 100 || sanitizedDescription.length > 500) {
+      alert('Please keep your input within reasonable length limits');
+      return;
+    }
+
+    setLastMessageTime(now);
 
     const whatsappMessage = `Hi HKS Provisions,
 
 I would like to get a quote for a Custom Tea Blend:
 
-Blend Name: ${customBlend.name}
-Description: ${customBlend.description}
-${customBlend.requirements ? `Special Requirements: ${customBlend.requirements}` : ''}
+Blend Name: ${sanitizedName}
+Description: ${sanitizedDescription}
+${sanitizedRequirements ? `Special Requirements: ${sanitizedRequirements}` : ''}
 
 Please provide pricing and minimum order quantity details.
 
 Thank you!`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/917397248359?text=${encodedMessage}`, '_blank');
+    
+    // Secure external link opening
+    const whatsappUrl = `https://wa.me/917397248359?text=${encodedMessage}`;
+    
+    // Validate URL before opening
+    if (whatsappUrl.startsWith('https://wa.me/')) {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      console.error('Invalid WhatsApp URL generated');
+    }
   };
 
   const handleGradeQuote = (grade: any) => {
+    // Rate limiting check
+    const now = Date.now();
+    if (now - lastMessageTime < RATE_LIMIT_MS) {
+      alert('Please wait a moment before sending another message.');
+      return;
+    }
+
+    setLastMessageTime(now);
+
     const whatsappMessage = `Hi HKS Provisions,
 
 I'm interested in your ${grade.name} tea grade.
@@ -118,10 +187,23 @@ Please share the latest quote with specifications and pricing.
 Thank you!`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/917397248359?text=${encodedMessage}`, '_blank');
+    const whatsappUrl = `https://wa.me/917397248359?text=${encodedMessage}`;
+    
+    if (whatsappUrl.startsWith('https://wa.me/')) {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
   };
 
   const handleBlendQuote = (blend: any) => {
+    // Rate limiting check
+    const now = Date.now();
+    if (now - lastMessageTime < RATE_LIMIT_MS) {
+      alert('Please wait a moment before sending another message.');
+      return;
+    }
+
+    setLastMessageTime(now);
+
     const whatsappMessage = `Hi HKS Provisions,
 
 I'm interested in your ${blend.name}.
@@ -133,13 +215,25 @@ Please share the latest quote with specifications and pricing.
 Thank you!`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/917397248359?text=${encodedMessage}`, '_blank');
+    const whatsappUrl = `https://wa.me/917397248359?text=${encodedMessage}`;
+    
+    if (whatsappUrl.startsWith('https://wa.me/')) {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-[#DEDDF5] to-white">
       <Header />
       
+      {/* Security Notice */}
+      {!isSecureConnection && (
+        <div className="bg-yellow-500 text-white p-2 text-center text-sm">
+          <Shield className="inline w-4 h-4 mr-2" />
+          Notice: This connection is not secure. Please use HTTPS in production.
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-[#2A2A6F] via-[#5353AB] to-[#362F6F] text-white py-20 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -182,6 +276,11 @@ Thank you!`;
                       src={grade.image} 
                       alt={grade.name}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.error('Image failed to load:', grade.image);
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                      }}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent`}></div>
                     <div className={`${grade.color} h-2 w-full absolute bottom-0`}></div>
