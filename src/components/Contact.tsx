@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -46,7 +45,7 @@ Thank you!
     `.trim();
     
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/917397248389?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/917397248359?text=${encodedMessage}`, '_blank');
     
     toast({
       title: "Inquiry Sent!",
@@ -77,8 +76,8 @@ Thank you!
     {
       icon: <Phone className="w-6 h-6 text-[#5353AB]" />,
       title: 'Phone',
-      details: '+91 73972 48389',
-      action: () => window.open('tel:+917397248389')
+      details: '+91 73972 48359',
+      action: () => window.open('tel:+917397248359')
     },
     {
       icon: <Mail className="w-6 h-6 text-[#5353AB]" />,
@@ -283,7 +282,7 @@ Thank you!
                 </p>
                 <Button 
                   className="bg-white text-[#2A2A6F] hover:bg-[#DEDDF5] font-semibold px-8 py-3"
-                  onClick={() => window.open('https://wa.me/917397248389?text=Hi%2C%20I%20need%20immediate%20assistance%20from%20HKS%20Provisions', '_blank')}
+                  onClick={() => window.open('https://wa.me/917397248359?text=Hi%2C%20I%20need%20immediate%20assistance%20from%20HKS%20Provisions', '_blank')}
                 >
                   Chat on WhatsApp
                 </Button>
