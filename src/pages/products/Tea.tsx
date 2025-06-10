@@ -94,6 +94,33 @@ const Tea = () => {
     }
   ];
 
+  const customBlends = [
+    {
+      id: 'custom-breakfast',
+      name: 'Custom Breakfast Blend',
+      description: 'Tailored morning blend with your preferred strength and flavor profile',
+      features: ['Customizable strength', 'Flavor profiling', 'Brand development'],
+      color: 'bg-indigo-600',
+      image: 'https://images.unsplash.com/photo-1594631661960-d966f9eb7288?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: 'custom-masala',
+      name: 'Custom Masala Chai',
+      description: 'Personalized spice blend with traditional tea base for unique masala chai',
+      features: ['Custom spice ratio', 'Traditional methods', 'Regional variations'],
+      color: 'bg-red-600',
+      image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: 'custom-export',
+      name: 'Custom Export Blend',
+      description: 'Specially crafted blends for international markets and specific requirements',
+      features: ['Market-specific', 'Quality consistency', 'Bulk quantities'],
+      color: 'bg-teal-600',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    }
+  ];
+
   const handleSecureQuote = (productName: string, description: string) => {
     if (!rateLimiter()) {
       alert('Please wait a moment before sending another message.');
@@ -249,6 +276,60 @@ Thank you!`;
                       onClick={() => handleSecureQuote(blend.name, blend.description)}
                     >
                       Get Quote
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Blends Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center mb-4">
+              <Sparkles className="w-10 h-10 text-[#5353AB] mr-3" />
+              <h2 className="text-4xl font-bold text-[#2A2A6F]">Custom Blends</h2>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Bespoke tea solutions tailored to your specific requirements and market preferences
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {customBlends.map((blend) => (
+              <Card key={blend.id} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 bg-gradient-to-br from-white to-indigo-50">
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={blend.image} 
+                      alt={blend.name}
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent`}></div>
+                    <div className={`${blend.color} h-3 w-full absolute bottom-0`}></div>
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-[#2A2A6F] mb-3">{blend.name}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{blend.description}</p>
+                    
+                    <div className="space-y-2 mb-6">
+                      {blend.features.map((feature, index) => (
+                        <div key={index} className="flex items-center text-sm text-gray-600">
+                          <div className="w-2 h-2 bg-[#5353AB] rounded-full mr-3"></div>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Button 
+                      className="w-full bg-[#5353AB] hover:bg-[#2A2A6F] text-white py-3 font-semibold"
+                      onClick={() => handleSecureQuote(blend.name, blend.description)}
+                    >
+                      Get Custom Quote
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
