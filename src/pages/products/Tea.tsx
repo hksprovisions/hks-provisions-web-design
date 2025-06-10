@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -7,34 +8,22 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Package, Globe, Leaf, Coffee, Blend, Sparkles, Shield } from 'lucide-react';
+import { SecurityUtils } from '@/utils/security';
+import { ProductionConfig } from '@/config/production';
 
 const Tea = () => {
   const navigate = useNavigate();
   const [customBlend, setCustomBlend] = useState({ name: '', description: '', requirements: '' });
   const [isSecureConnection, setIsSecureConnection] = useState(false);
+  const [rateLimiter] = useState(() => SecurityUtils.createRateLimiter(3000, 5));
 
-  // Security check on component mount
   useEffect(() => {
-    // Check if connection is secure
-    setIsSecureConnection(window.location.protocol === 'https:');
+    setIsSecureConnection(SecurityUtils.isSecureConnection());
     
-    // Content Security Policy headers check
-    if (process.env.NODE_ENV === 'production') {
+    if (SecurityUtils.isProduction()) {
       console.log('Production mode: Security measures active');
     }
   }, []);
-
-  // Input sanitization function
-  const sanitizeInput = (input: string): string => {
-    return input
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      .replace(/[<>]/g, '')
-      .trim();
-  };
-
-  // Rate limiting for WhatsApp messages
-  const [lastMessageTime, setLastMessageTime] = useState(0);
-  const RATE_LIMIT_MS = 3000; // 3 seconds between messages
 
   const ctcGrades = [
     { 
@@ -115,31 +104,62 @@ const Tea = () => {
     }
   ];
 
-  const handleCustomBlendQuote = () => {
-    // Rate limiting check
-    const now = Date.now();
-    if (now - lastMessageTime < RATE_LIMIT_MS) {
+  const handleSecureQuote = (productName: string, description: string) => {
+    if (!rateLimiter()) {
       alert('Please wait a moment before sending another message.');
       return;
     }
 
-    // Input validation and sanitization
-    const sanitizedName = sanitizeInput(customBlend.name);
-    const sanitizedDescription = sanitizeInput(customBlend.description);
-    const sanitizedRequirements = sanitizeInput(customBlend.requirements);
+    const sanitizedName = SecurityUtils.sanitizeInput(productName);
+    const sanitizedDescription = SecurityUtils.sanitizeInput(description);
 
-    if (!sanitizedName || !sanitizedDescription) {
-      alert('Please fill in the blend name and description');
+    if (!SecurityUtils.validateForm({ name: sanitizedName }, { name: { required: true, maxLength: 100 } }).isValid) {
+      alert('Invalid product name');
       return;
     }
 
-    // Length validation
-    if (sanitizedName.length > 100 || sanitizedDescription.length > 500) {
-      alert('Please keep your input within reasonable length limits');
+    const whatsappMessage = `Hi HKS Provisions,
+
+I'm interested in your ${sanitizedName}.
+
+${sanitizedDescription}
+
+Please share the latest quote with specifications and pricing.
+
+Thank you!`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/${ProductionConfig.api.whatsappNumber}?text=${encodedMessage}`;
+    
+    if (SecurityUtils.isValidUrl(whatsappUrl, ProductionConfig.security.allowedDomains)) {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      SecurityUtils.logError(new Error('Invalid WhatsApp URL generated'), 'Quote generation');
+    }
+  };
+
+  const handleCustomBlendQuote = () => {
+    const sanitizedName = SecurityUtils.sanitizeInput(customBlend.name);
+    const sanitizedDescription = SecurityUtils.sanitizeInput(customBlend.description);
+    const sanitizedRequirements = SecurityUtils.sanitizeInput(customBlend.requirements);
+
+    const validation = SecurityUtils.validateForm(
+      { name: sanitizedName, description: sanitizedDescription },
+      { 
+        name: { required: true, maxLength: 100 },
+        description: { required: true, maxLength: 500 }
+      }
+    );
+
+    if (!validation.isValid) {
+      alert(validation.errors.join(', '));
       return;
     }
 
-    setLastMessageTime(now);
+    if (!rateLimiter()) {
+      alert('Please wait a moment before sending another message.');
+      return;
+    }
 
     const whatsappMessage = `Hi HKS Provisions,
 
@@ -154,70 +174,9 @@ Please provide pricing and minimum order quantity details.
 Thank you!`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/${ProductionConfig.api.whatsappNumber}?text=${encodedMessage}`;
     
-    // Secure external link opening
-    const whatsappUrl = `https://wa.me/917397248359?text=${encodedMessage}`;
-    
-    // Validate URL before opening
-    if (whatsappUrl.startsWith('https://wa.me/')) {
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-    } else {
-      console.error('Invalid WhatsApp URL generated');
-    }
-  };
-
-  const handleGradeQuote = (grade: any) => {
-    // Rate limiting check
-    const now = Date.now();
-    if (now - lastMessageTime < RATE_LIMIT_MS) {
-      alert('Please wait a moment before sending another message.');
-      return;
-    }
-
-    setLastMessageTime(now);
-
-    const whatsappMessage = `Hi HKS Provisions,
-
-I'm interested in your ${grade.name} tea grade.
-
-${grade.description}
-
-Please share the latest quote with specifications and pricing.
-
-Thank you!`;
-
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/917397248359?text=${encodedMessage}`;
-    
-    if (whatsappUrl.startsWith('https://wa.me/')) {
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-    }
-  };
-
-  const handleBlendQuote = (blend: any) => {
-    // Rate limiting check
-    const now = Date.now();
-    if (now - lastMessageTime < RATE_LIMIT_MS) {
-      alert('Please wait a moment before sending another message.');
-      return;
-    }
-
-    setLastMessageTime(now);
-
-    const whatsappMessage = `Hi HKS Provisions,
-
-I'm interested in your ${blend.name}.
-
-${blend.description}
-
-Please share the latest quote with specifications and pricing.
-
-Thank you!`;
-
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/917397248359?text=${encodedMessage}`;
-    
-    if (whatsappUrl.startsWith('https://wa.me/')) {
+    if (SecurityUtils.isValidUrl(whatsappUrl, ProductionConfig.security.allowedDomains)) {
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     }
   };
@@ -226,7 +185,6 @@ Thank you!`;
     <div className="min-h-screen bg-gradient-to-br from-white via-[#DEDDF5] to-white">
       <Header />
       
-      {/* Security Notice */}
       {!isSecureConnection && (
         <div className="bg-yellow-500 text-white p-2 text-center text-sm">
           <Shield className="inline w-4 h-4 mr-2" />
@@ -237,11 +195,6 @@ Thank you!`;
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-[#2A2A6F] via-[#5353AB] to-[#362F6F] text-white py-20 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full bg-repeat" style={{
-            backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
-          }}></div>
-        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-center mb-6">
             <Leaf className="w-16 h-16 text-white mr-4" />
@@ -277,10 +230,6 @@ Thank you!`;
                       alt={grade.name}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                       loading="lazy"
-                      onError={(e) => {
-                        console.error('Image failed to load:', grade.image);
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
-                      }}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent`}></div>
                     <div className={`${grade.color} h-2 w-full absolute bottom-0`}></div>
@@ -296,9 +245,9 @@ Thank you!`;
                     
                     <Button 
                       className="w-full bg-[#5353AB] hover:bg-[#2A2A6F] text-white py-3 font-semibold"
-                      onClick={() => handleGradeQuote(grade)}
+                      onClick={() => handleSecureQuote(grade.name, grade.description)}
                     >
-                      Get Quote for {grade.name}
+                      Get Quote
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
@@ -350,9 +299,9 @@ Thank you!`;
                     
                     <Button 
                       className="w-full bg-[#5353AB] hover:bg-[#2A2A6F] text-white py-3 font-semibold"
-                      onClick={() => handleBlendQuote(blend)}
+                      onClick={() => handleSecureQuote(blend.name, blend.description)}
                     >
-                      Get Quote for {blend.name}
+                      Get Quote
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
@@ -392,6 +341,7 @@ Thank you!`;
                           onChange={(e) => setCustomBlend(prev => ({ ...prev, name: e.target.value }))}
                           placeholder="e.g., Morning Glory Blend"
                           className="border-[#DEDDF5] focus:border-[#5353AB] py-3"
+                          maxLength={100}
                         />
                       </div>
                       
@@ -405,6 +355,7 @@ Thank you!`;
                           placeholder="Describe your ideal blend - strength, flavor profile, intended use..."
                           rows={4}
                           className="border-[#DEDDF5] focus:border-[#5353AB]"
+                          maxLength={500}
                         />
                       </div>
                       
@@ -418,6 +369,7 @@ Thank you!`;
                           placeholder="Any specific grades, packaging, or quality requirements..."
                           rows={3}
                           className="border-[#DEDDF5] focus:border-[#5353AB]"
+                          maxLength={500}
                         />
                       </div>
                     </div>
