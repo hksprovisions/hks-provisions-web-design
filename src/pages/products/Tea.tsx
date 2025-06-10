@@ -5,6 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Package, Globe, Leaf, Coffee, Blend, Sparkles, Shield } from 'lucide-react';
 import { SecurityUtils } from '@/utils/security';
 import { ProductionConfig } from '@/config/production';
@@ -13,6 +15,14 @@ const Tea = () => {
   const navigate = useNavigate();
   const [isSecureConnection, setIsSecureConnection] = useState(false);
   const [rateLimiter] = useState(() => SecurityUtils.createRateLimiter(3000, 5));
+  
+  // Custom blend form state
+  const [customBlendForm, setCustomBlendForm] = useState({
+    name: '',
+    gradePercentage: '',
+    quantity: '',
+    description: ''
+  });
 
   useEffect(() => {
     setIsSecureConnection(SecurityUtils.isSecureConnection());
@@ -94,33 +104,6 @@ const Tea = () => {
     }
   ];
 
-  const customBlends = [
-    {
-      id: 'custom-breakfast',
-      name: 'Custom Breakfast Blend',
-      description: 'Tailored morning blend with your preferred strength and flavor profile',
-      features: ['Customizable strength', 'Flavor profiling', 'Brand development'],
-      color: 'bg-indigo-600',
-      image: 'https://images.unsplash.com/photo-1594631661960-d966f9eb7288?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'custom-masala',
-      name: 'Custom Masala Chai',
-      description: 'Personalized spice blend with traditional tea base for unique masala chai',
-      features: ['Custom spice ratio', 'Traditional methods', 'Regional variations'],
-      color: 'bg-red-600',
-      image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'custom-export',
-      name: 'Custom Export Blend',
-      description: 'Specially crafted blends for international markets and specific requirements',
-      features: ['Market-specific', 'Quality consistency', 'Bulk quantities'],
-      color: 'bg-teal-600',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    }
-  ];
-
   const handleSecureQuote = (productName: string, description: string) => {
     if (!rateLimiter()) {
       alert('Please wait a moment before sending another message.');
@@ -153,6 +136,66 @@ Thank you!`;
     } else {
       SecurityUtils.logError(new Error('Invalid WhatsApp URL generated'), 'Quote generation');
     }
+  };
+
+  const handleCustomBlendQuote = () => {
+    if (!rateLimiter()) {
+      alert('Please wait a moment before sending another message.');
+      return;
+    }
+
+    const { name, gradePercentage, quantity, description } = customBlendForm;
+    
+    // Validate form
+    const validation = SecurityUtils.validateForm(customBlendForm, {
+      name: { required: true, maxLength: 100 },
+      gradePercentage: { required: true, maxLength: 200 },
+      quantity: { required: true, maxLength: 50 },
+      description: { required: true, maxLength: 500 }
+    });
+
+    if (!validation.isValid) {
+      alert('Please fill all fields correctly: ' + validation.errors.join(', '));
+      return;
+    }
+
+    const sanitizedData = {
+      name: SecurityUtils.sanitizeInput(name),
+      gradePercentage: SecurityUtils.sanitizeInput(gradePercentage),
+      quantity: SecurityUtils.sanitizeInput(quantity),
+      description: SecurityUtils.sanitizeInput(description)
+    };
+
+    const whatsappMessage = `Hi HKS Provisions,
+
+I would like to request a quote for a Custom Tea Blend:
+
+Blend Name: ${sanitizedData.name}
+Grade Composition: ${sanitizedData.gradePercentage}
+Required Quantity: ${sanitizedData.quantity}
+Description: ${sanitizedData.description}
+
+Please provide pricing and availability details.
+
+Thank you!`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/${ProductionConfig.api.whatsappNumber}?text=${encodedMessage}`;
+    
+    if (SecurityUtils.isValidUrl(whatsappUrl, ProductionConfig.security.allowedDomains)) {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      // Reset form
+      setCustomBlendForm({ name: '', gradePercentage: '', quantity: '', description: '' });
+    } else {
+      SecurityUtils.logError(new Error('Invalid WhatsApp URL generated'), 'Custom blend quote');
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setCustomBlendForm(prev => ({
+      ...prev,
+      [field]: SecurityUtils.sanitizeInput(value)
+    }));
   };
 
   return (
@@ -286,56 +329,83 @@ Thank you!`;
         </div>
       </section>
 
-      {/* Custom Blends Section */}
+      {/* Custom Blend Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
               <Sparkles className="w-10 h-10 text-[#5353AB] mr-3" />
-              <h2 className="text-4xl font-bold text-[#2A2A6F]">Custom Blends</h2>
+              <h2 className="text-4xl font-bold text-[#2A2A6F]">Custom Tea Blend</h2>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Bespoke tea solutions tailored to your specific requirements and market preferences
+              Create your own unique tea blend with custom specifications
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {customBlends.map((blend) => (
-              <Card key={blend.id} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 bg-gradient-to-br from-white to-indigo-50">
-                <CardContent className="p-0">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={blend.image} 
-                      alt={blend.name}
-                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-0 shadow-2xl bg-white">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <label className="block text-sm font-semibold text-[#2A2A6F] mb-2">
+                      Blend Name *
+                    </label>
+                    <Input
+                      placeholder="e.g., Royal Morning Blend"
+                      value={customBlendForm.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className="border-[#5353AB] focus:ring-[#5353AB]"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent`}></div>
-                    <div className={`${blend.color} h-3 w-full absolute bottom-0`}></div>
                   </div>
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-[#2A2A6F] mb-3">{blend.name}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{blend.description}</p>
-                    
-                    <div className="space-y-2 mb-6">
-                      {blend.features.map((feature, index) => (
-                        <div key={index} className="flex items-center text-sm text-gray-600">
-                          <div className="w-2 h-2 bg-[#5353AB] rounded-full mr-3"></div>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <Button 
-                      className="w-full bg-[#5353AB] hover:bg-[#2A2A6F] text-white py-3 font-semibold"
-                      onClick={() => handleSecureQuote(blend.name, blend.description)}
-                    >
-                      Get Custom Quote
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                  
+                  <div>
+                    <label className="block text-sm font-semibold text-[#2A2A6F] mb-2">
+                      Required Quantity *
+                    </label>
+                    <Input
+                      placeholder="e.g., 1000 kg, 50 MT"
+                      value={customBlendForm.quantity}
+                      onChange={(e) => handleInputChange('quantity', e.target.value)}
+                      className="border-[#5353AB] focus:ring-[#5353AB]"
+                    />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+
+                <div className="mb-6">
+                  <label className="block text-sm font-semibold text-[#2A2A6F] mb-2">
+                    Grade Composition & Percentage *
+                  </label>
+                  <Input
+                    placeholder="e.g., 40% BOP, 30% BOPSM, 20% OF, 10% PD"
+                    value={customBlendForm.gradePercentage}
+                    onChange={(e) => handleInputChange('gradePercentage', e.target.value)}
+                    className="border-[#5353AB] focus:ring-[#5353AB]"
+                  />
+                </div>
+
+                <div className="mb-8">
+                  <label className="block text-sm font-semibold text-[#2A2A6F] mb-2">
+                    Blend Description & Requirements *
+                  </label>
+                  <Textarea
+                    placeholder="Describe your blend requirements, taste profile, strength, color, intended use, target market, etc."
+                    rows={4}
+                    value={customBlendForm.description}
+                    onChange={(e) => handleInputChange('description', e.target.value)}
+                    className="border-[#5353AB] focus:ring-[#5353AB]"
+                  />
+                </div>
+
+                <Button 
+                  onClick={handleCustomBlendQuote}
+                  className="w-full bg-[#5353AB] hover:bg-[#2A2A6F] text-white py-4 text-lg font-semibold"
+                  disabled={!customBlendForm.name || !customBlendForm.gradePercentage || !customBlendForm.quantity || !customBlendForm.description}
+                >
+                  Get Custom Blend Quote
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
