@@ -31,28 +31,28 @@ const Tea = () => {
       name: 'BP (Broken Pekoe)', 
       description: 'Large leaf grade with excellent brewing strength',
       color: 'bg-amber-500',
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1597318285942-38d93c7fad7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'bop', 
       name: 'BOP (Broken Orange Pekoe)', 
       description: 'Premium grade with bold granules and malty flavor',
       color: 'bg-orange-500',
-      image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'bps', 
       name: 'BPS (Broken Pekoe Souchong)', 
       description: 'Medium grade with good color and strength',
       color: 'bg-yellow-600',
-      image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'of', 
       name: 'OF (Orange Fannings)', 
       description: 'Small grade particles perfect for strong quick brewing',
       color: 'bg-orange-600',
-      image: 'https://images.unsplash.com/photo-1597318281675-17516f892648?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'bopsm', 
@@ -66,14 +66,14 @@ const Tea = () => {
       name: 'PD (Pekoe Dust)', 
       description: 'Fine grade ideal for strong milk tea',
       color: 'bg-brown-500',
-      image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     { 
       id: 'dust', 
       name: 'Dust Grade', 
       description: 'Finest grade for instant color and strength',
       color: 'bg-gray-600',
-      image: 'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -84,7 +84,7 @@ const Tea = () => {
       description: 'Light and refreshing blend perfect for everyday consumption',
       features: ['Mild strength', 'Golden color', 'Smooth taste'],
       color: 'bg-green-500',
-      image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 'gold',
@@ -92,7 +92,7 @@ const Tea = () => {
       description: 'Premium balanced blend with rich aroma and full body',
       features: ['Medium strength', 'Rich golden brew', 'Aromatic'],
       color: 'bg-yellow-500',
-      image: 'https://images.unsplash.com/photo-1597318285942-38d93c7fad7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1564890716881-4b5862ff3d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 'premium',
@@ -100,7 +100,7 @@ const Tea = () => {
       description: 'Superior quality blend for connoisseurs and export markets',
       features: ['Full strength', 'Deep amber color', 'Complex flavor'],
       color: 'bg-purple-600',
-      image: 'https://images.unsplash.com/photo-1564890716881-4b5862ff3d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
 

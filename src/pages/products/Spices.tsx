@@ -28,7 +28,7 @@ const Spices = () => {
       id: 'cumin-seeds',
       name: 'Cumin Seeds (Jeera)',
       description: 'Premium quality cumin seeds with rich aroma and flavor, essential for Indian cuisine.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1609501676725-7186f734a4b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -36,7 +36,7 @@ const Spices = () => {
       id: 'fennel-seeds',
       name: 'Fennel Seeds (Saunf)',
       description: 'Sweet aromatic fennel seeds, excellent for digestive health and culinary applications.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -44,7 +44,7 @@ const Spices = () => {
       id: 'coriander-seeds',
       name: 'Coriander Seeds',
       description: 'High-quality coriander seeds with fresh citrusy aroma, perfect for spice blends.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1572613978277-58d8b6c0f446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -52,7 +52,7 @@ const Spices = () => {
       id: 'black-pepper',
       name: 'Black Pepper',
       description: 'Premium black pepper with high piperine content, the king of spices.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Cochin/Chennai'
     },
@@ -68,7 +68,7 @@ const Spices = () => {
       id: 'mustard-seeds',
       name: 'Mustard Seeds',
       description: 'Yellow, black, and brown mustard seeds with pungent flavor and oil content.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Kandla'
     }
@@ -79,7 +79,7 @@ const Spices = () => {
       id: 'turmeric-powder',
       name: 'Turmeric Powder',
       description: 'High curcumin content turmeric powder with bright yellow color and medicinal properties.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Chennai/Tuticorin'
     },
@@ -87,7 +87,7 @@ const Spices = () => {
       id: 'red-chilli-powder',
       name: 'Red Chilli Powder',
       description: 'Premium red chilli powder with high color value and balanced heat levels.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1583221861045-4fe2e056b0a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Chennai/Guntur'
     },
@@ -111,7 +111,7 @@ const Spices = () => {
       id: 'cumin-powder',
       name: 'Cumin Powder',
       description: 'Fresh ground cumin powder with strong aroma and earthy flavor profile.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1609501676725-7186f734a4b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     }

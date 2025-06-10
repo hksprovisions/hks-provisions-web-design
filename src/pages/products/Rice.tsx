@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -27,7 +28,7 @@ const Rice = () => {
       id: '1121-steam',
       name: '1121 Steam',
       description: 'Extra-long grain (8.3mm+), fluffy, fragrant. Premium export variety.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Nhava Sheva'
     },
@@ -35,7 +36,7 @@ const Rice = () => {
       id: '1121-sella',
       name: '1121 Sella (Parboiled)',
       description: 'Golden yellow, firm after cooking, used in Gulf, Iran, and Africa.',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Nhava Sheva'
     },
@@ -43,7 +44,7 @@ const Rice = () => {
       id: '1121-raw',
       name: '1121 Raw',
       description: 'Non-parboiled, long-grain, aromatic, white appearance.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Nhava Sheva'
     },
@@ -51,7 +52,7 @@ const Rice = () => {
       id: '1509-steam',
       name: '1509 Steam',
       description: 'Slightly shorter than 1121, economical and widely accepted.',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Nhava Sheva'
     },
@@ -59,7 +60,7 @@ const Rice = () => {
       id: 'traditional-basmati',
       name: 'Traditional Basmati',
       description: 'Original basmati cultivar, aged and rich aroma. Niche export.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Nhava Sheva'
     },
@@ -67,7 +68,7 @@ const Rice = () => {
       id: 'sharbati',
       name: 'Sharbati (Steam/Sella)',
       description: 'Long-grain, non-aromatic, high-volume export to Middle East.',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Nhava Sheva'
     }
@@ -78,7 +79,7 @@ const Rice = () => {
       id: 'ir64',
       name: 'IR64 (Raw/Parboiled)',
       description: 'Medium grain, high yield, used for daily consumption and exports.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Chennai/Visakhapatnam'
     },
@@ -86,7 +87,7 @@ const Rice = () => {
       id: 'sona-masoori',
       name: 'Sona Masoori (Raw/Steam)',
       description: 'Lightweight, aromatic, soft rice. South Indian favorite.',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1571167562453-fd2d9c3e75b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Chennai/Visakhapatnam'
     },
@@ -94,7 +95,7 @@ const Rice = () => {
       id: 'pr11',
       name: 'PR11/PR14 (Steam/Sella/Raw)',
       description: 'Long grain, non-aromatic, cost-effective rice. Mass-market favorite.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Nhava Sheva'
     },
@@ -102,7 +103,7 @@ const Rice = () => {
       id: 'swarna',
       name: 'Swarna (Raw/Usna)',
       description: 'Medium-grain rice, staple for PDS/government orders.',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Chennai/Paradip'
     }
@@ -113,7 +114,7 @@ const Rice = () => {
       id: 'mini-dubar',
       name: 'Mini Dubar',
       description: 'Shorter broken basmati grains, better quality than average broken.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/JNPT'
     },
@@ -121,7 +122,7 @@ const Rice = () => {
       id: 'dubar',
       name: 'Dubar',
       description: 'Medium broken grains, used for cost-effective basmati meals.',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/JNPT'
     },
@@ -129,7 +130,7 @@ const Rice = () => {
       id: 'tibar',
       name: 'Tibar',
       description: 'Long broken basmati grains (60-75% length intact). Decent quality, good aroma.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1573833071609-0cd8b5352b3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Mundra/JNPT'
     },
@@ -137,7 +138,7 @@ const Rice = () => {
       id: 'parmal',
       name: 'Parmal (Raw/Parboiled)',
       description: 'Common in PDS and low-cost export. Long but non-aromatic.',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 Container (25 MT)',
       port: 'Kolkata/Paradip'
     }
