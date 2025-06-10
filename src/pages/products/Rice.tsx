@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -6,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Package, Globe, Grain, Shield } from 'lucide-react';
+import { ArrowRight, Package, Globe, Wheat, Shield } from 'lucide-react';
 import { SecurityUtils } from '@/utils/security';
 import { ProductionConfig } from '@/config/production';
 
@@ -249,7 +248,7 @@ Thank you!`;
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-center mb-6">
-            <Grain className="w-16 h-16 text-white mr-4" />
+            <Wheat className="w-16 h-16 text-white mr-4" />
             <h1 className="text-4xl lg:text-5xl font-bold">Premium Rice Collection</h1>
           </div>
           <p className="text-xl opacity-90 max-w-3xl mx-auto text-center">
