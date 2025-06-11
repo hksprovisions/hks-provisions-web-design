@@ -9,7 +9,7 @@ const Products = () => {
       id: 'tea',
       name: 'Premium Tea',
       description: 'Hand-picked tea leaves from the finest gardens. Available in various grades including CTC, Orthodox, and specialty blends.',
-      image: '/lovable-uploads/2c40f678-490e-4a96-8b5e-4c7e7dd1dfbf.png',
+      image: '/lovable-uploads/bd8724d0-9378-4a03-8f8f-b6563548034c.png',
       varieties: ['CTC Tea', 'Orthodox Tea', 'Green Tea', 'Specialty Blends'],
       whatsappText: 'Hi%2C%20I%20want%20a%20quote%20for%20Premium%20Tea%20from%20HKS%20Provisions',
       link: '/products/tea'
