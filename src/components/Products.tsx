@@ -18,7 +18,7 @@ const Products = () => {
       id: 'rice',
       name: 'Quality Rice',
       description: 'Premium rice varieties including Basmati, Non-Basmati, Parboiled, and specialty rice for domestic and export markets.',
-      image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/3937756b-42f4-4217-bb17-d9a0234de196.png',
       varieties: ['Basmati Rice', 'IR64 Parboiled', 'Sona Masoori', 'Broken Rice'],
       whatsappText: 'Hi%2C%20I%20want%20a%20quote%20for%20Quality%20Rice%20from%20HKS%20Provisions',
       link: '/products/rice'
