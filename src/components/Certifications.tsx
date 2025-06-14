@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Award, CheckCircle, Globe } from 'lucide-react';
+import { Shield, Award, Globe } from 'lucide-react';
 
 const Certifications = () => {
   const certifications = [
@@ -16,12 +15,6 @@ const Certifications = () => {
       title: 'ISO Compliant',
       description: 'International Organization for Standardization compliance for quality management.',
       details: 'Quality Systems | Process Control | Continuous Improvement'
-    },
-    {
-      icon: <CheckCircle className="w-12 h-12 text-[#5353AB]" />,
-      title: 'MSME Registered',
-      description: 'Registered under Micro, Small & Medium Enterprises for government recognition.',
-      details: 'Government Recognized | Compliance Maintained | Regular Updates'
     },
     {
       icon: <Globe className="w-12 h-12 text-[#5353AB]" />,
