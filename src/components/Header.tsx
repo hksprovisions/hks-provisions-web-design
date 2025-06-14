@@ -70,7 +70,7 @@ const Header = () => {
               )}
             </div>
 
-            <button onClick={() => scrollToSection('quality')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Quality & Process</button>
+            <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Quality & Process</button>
             <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Certifications</button>
             <button onClick={() => scrollToSection('why-hks')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Why HKS?</button>
             <button onClick={() => scrollToSection('contact')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Contact</button>
@@ -114,7 +114,7 @@ const Header = () => {
                   </Link>
                 ))}
               </div>
-              <button onClick={() => scrollToSection('quality')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Quality & Process</button>
+              <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Quality & Process</button>
               <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Certifications</button>
               <button onClick={() => scrollToSection('why-hks')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Why HKS?</button>
               <button onClick={() => scrollToSection('contact')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Contact</button>
