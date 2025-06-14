@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +13,8 @@ import Spices from "./pages/products/Spices";
 import ProductDetail from "./pages/products/ProductDetail";
 import { SecurityUtils, setupGlobalErrorHandling } from "./utils/security";
 import { initializeProduction } from "./config/production";
+import SecurityWrapper from "./components/SecurityWrapper";
+import { AnimationUtils } from "./utils/animations";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,6 +37,9 @@ const App = () => {
       SecurityUtils.setCSPHeaders();
     }
     
+    // Initialize animations
+    AnimationUtils.addHoverEffects();
+    
     // Log environment info
     console.log('App initialized:', {
       isProduction: SecurityUtils.isProduction(),
@@ -49,20 +53,22 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/products/tea" element={<Tea />} />
-            <Route path="/products/rice" element={<Rice />} />
-            <Route path="/products/wheat" element={<Wheat />} />
-            <Route path="/products/spices" element={<Spices />} />
-            <Route path="/products/:category/:subcategory/:product" element={<ProductDetail />} />
-            <Route path="/products/:category/:product" element={<ProductDetail />} />
-            <Route path="/products/:category" element={<ProductDetail />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <SecurityWrapper>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/products/tea" element={<Tea />} />
+              <Route path="/products/rice" element={<Rice />} />
+              <Route path="/products/wheat" element={<Wheat />} />
+              <Route path="/products/spices" element={<Spices />} />
+              <Route path="/products/:category/:subcategory/:product" element={<ProductDetail />} />
+              <Route path="/products/:category/:product" element={<ProductDetail />} />
+              <Route path="/products/:category" element={<ProductDetail />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </SecurityWrapper>
       </TooltipProvider>
     </QueryClientProvider>
   );

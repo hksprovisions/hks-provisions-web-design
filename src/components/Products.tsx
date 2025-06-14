@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Shield } from 'lucide-react';
 
 const Products = () => {
   const products = [
@@ -47,10 +48,10 @@ const Products = () => {
     <section id="products" className="py-20 bg-gradient-to-br from-white to-purple-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4 animate-fade-in">
             Our Products
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
             Discover our comprehensive range of premium agricultural products, 
             carefully sourced and quality-tested for your business needs.
           </p>
@@ -60,7 +61,7 @@ const Products = () => {
           {products.map((product, index) => (
             <Card 
               key={product.id} 
-              className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
+              className="product-item card-animate group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden hover-enhance"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden">
@@ -68,8 +69,15 @@ const Products = () => {
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-600/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-2 right-2">
+                  <div className="security-badge">
+                    <Shield className="w-3 h-3" />
+                    Verified
+                  </div>
+                </div>
               </div>
               
               <CardContent className="p-6">
@@ -85,7 +93,7 @@ const Products = () => {
                   <h4 className="font-semibold text-gray-700 mb-2 text-sm">Varieties:</h4>
                   <div className="grid grid-cols-2 gap-1">
                     {product.varieties.map((variety, idx) => (
-                      <span key={idx} className="text-xs bg-purple-100 px-2 py-1 rounded text-purple-700">
+                      <span key={idx} className="text-xs bg-purple-100 px-2 py-1 rounded text-purple-700 hover-enhance">
                         {variety}
                       </span>
                     ))}
@@ -94,7 +102,7 @@ const Products = () => {
                 
                 <div className="flex gap-2">
                   <Button 
-                    className="flex-1 bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 transform group-hover:scale-105"
+                    className="flex-1 bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 transform group-hover:scale-105 hover-enhance"
                     onClick={() => window.location.href = product.link}
                   >
                     View Details
@@ -102,8 +110,8 @@ const Products = () => {
                   <Button 
                     variant="outline"
                     size="icon"
-                    className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
-                    onClick={() => window.open(`https://wa.me/917397248359?text=${product.whatsappText}`, '_blank')}
+                    className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white hover-enhance"
+                    onClick={() => window.open(`https://wa.me/917397248359?text=${product.whatsappText}`, '_blank', 'noopener,noreferrer')}
                   >
                     <ArrowRight className="w-4 h-4" />
                   </Button>
