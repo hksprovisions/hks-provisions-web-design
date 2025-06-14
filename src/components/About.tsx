@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Globe, Users, Award } from 'lucide-react';
@@ -32,8 +31,8 @@ const About = () => {
     },
     {
       year: '2025',
-      title: 'Innovation & Growth',
-      description: 'Continuing to expand our reach and introduce innovative agricultural solutions for global markets.'
+      title: 'Corporate Expansion',
+      description: 'Incorporated OSSDN PROVISIONS PVT LTD for strategic expansion and enhanced market reach in agricultural trading.'
     }
   ];
 
