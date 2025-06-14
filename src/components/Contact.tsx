@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -115,13 +116,13 @@ Thank you!
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="shadow-xl border-0">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-[#2A2A6F] mb-6">Send Us an Inquiry</h3>
+            <CardContent className="p-6">
+              <h3 className="text-2xl font-bold text-[#2A2A6F] mb-4">Send Us an Inquiry</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Name *
                     </label>
                     <Input
@@ -134,7 +135,7 @@ Thank you!
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Company
                     </label>
                     <Input
@@ -146,9 +147,9 @@ Thank you!
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Email *
                     </label>
                     <Input
@@ -162,7 +163,7 @@ Thank you!
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Phone *
                     </label>
                     <Input
@@ -176,9 +177,9 @@ Thank you!
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Interested Product *
                     </label>
                     <Select required onValueChange={(value) => handleInputChange('product', value)}>
@@ -196,7 +197,7 @@ Thank you!
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Approximate Quantity
                     </label>
                     <Input
@@ -209,7 +210,7 @@ Thank you!
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Destination *
                   </label>
                   <Select required onValueChange={(value) => handleInputChange('destination', value)}>
@@ -224,14 +225,14 @@ Thank you!
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Message
                   </label>
                   <Textarea
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
                     placeholder="Tell us more about your requirements..."
-                    rows={4}
+                    rows={3}
                     className="border-[#DEDDF5] focus:border-[#5353AB]"
                   />
                 </div>
@@ -286,19 +287,6 @@ Thank you!
                 >
                   Chat on WhatsApp
                 </Button>
-              </CardContent>
-            </Card>
-
-            {/* Business Details */}
-            <Card className="shadow-lg border-0">
-              <CardContent className="p-6">
-                <h4 className="font-bold text-[#2A2A6F] mb-4">Business Details</h4>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <p><span className="font-medium">GSTIN:</span> Available on request</p>
-                  <p><span className="font-medium">CIN:</span> Available on request</p>
-                  <p><span className="font-medium">FSSAI:</span> Certified</p>
-                  <p><span className="font-medium">Established:</span> 2020</p>
-                </div>
               </CardContent>
             </Card>
           </div>
