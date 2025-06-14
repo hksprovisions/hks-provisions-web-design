@@ -1,8 +1,8 @@
+
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,11 +39,6 @@ const Header = () => {
               className="h-16 w-auto"
             />
           </Link>
-
-          {/* Search Bar - Desktop */}
-          <div className="hidden lg:block flex-1 max-w-md mx-8">
-            <SearchBar />
-          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -104,11 +99,6 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-slate-200 bg-white/95 backdrop-blur-lg">
-            {/* Mobile Search */}
-            <div className="mb-4 px-2">
-              <SearchBar />
-            </div>
-            
             <nav className="flex flex-col space-y-4">
               <button onClick={() => scrollToSection('home')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Home</button>
               <button onClick={() => scrollToSection('about')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">About Us</button>
