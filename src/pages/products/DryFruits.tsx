@@ -9,21 +9,21 @@ const DryFruits = () => {
     {
       name: 'Premium Almonds',
       description: 'High-quality California almonds, rich in nutrients and perfect for snacking or cooking.',
-      image: 'https://images.unsplash.com/photo-1508736793628-79bf5ac3a71a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/fc536805-1d3f-4562-a889-e885a819c6e8.png',
       specifications: ['Size: 18-20mm', 'Moisture: <6%', 'Origin: California', 'Grade: Premium'],
       uses: ['Direct consumption', 'Bakery products', 'Confectionery', 'Health foods']
     },
     {
       name: 'Cashew Nuts',
       description: 'Premium quality cashews sourced from the finest plantations.',
-      image: 'https://images.unsplash.com/photo-1619642751058-fdf87930554e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/3f6554e6-f630-45e8-8831-87f362bc90ab.png',
       specifications: ['Grade: W240/W320', 'Moisture: <5%', 'Origin: India/Vietnam', 'Color: Natural White'],
       uses: ['Snacks', 'Cooking', 'Sweets', 'Trail mixes']
     },
     {
       name: 'Walnuts',
       description: 'Fresh and crunchy walnuts with excellent nutritional value.',
-      image: 'https://images.unsplash.com/photo-1448043552756-e747b7bf2b37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/60f3b5d5-fae3-48c2-8d7d-7735f3a25c8b.png',
       specifications: ['Size: Large halves', 'Moisture: <8%', 'Origin: Kashmir/California', 'Grade: Premium'],
       uses: ['Direct consumption', 'Baking', 'Desserts', 'Health supplements']
     },
