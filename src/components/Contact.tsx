@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -249,7 +250,7 @@ Thank you!
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-[#2A2A6F] mb-6">Contact Information</h3>
+              <h3 className="text-3xl font-bold text-[#2A2A6F] mb-6 text-center">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <Card 
