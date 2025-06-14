@@ -1,8 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { SecurityUtils } from '@/utils/security';
-import { Shield, AlertTriangle } from 'lucide-react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { AlertTriangle } from 'lucide-react';
 
 interface SecurityWrapperProps {
   children: React.ReactNode;
@@ -47,14 +46,6 @@ const SecurityWrapper: React.FC<SecurityWrapperProps> = ({ children }) => {
       <div className="security-wrapper">
         {children}
       </div>
-      
-      {SecurityUtils.isSecureConnection() && (
-        <div className="fixed bottom-4 right-4 z-40">
-          <div className="bg-green-500 text-white p-2 rounded-full shadow-lg animate-pulse-subtle">
-            <Shield className="w-4 h-4" />
-          </div>
-        </div>
-      )}
     </>
   );
 };
