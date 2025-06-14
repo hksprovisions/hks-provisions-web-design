@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -37,7 +36,7 @@ const Products = () => {
       id: 'spices',
       name: 'Aromatic Spices',
       description: 'Fresh and aromatic spices sourced from the best regions. Whole spices and ground spices for culinary and industrial use.',
-      image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/df62efec-97e9-4664-8b8e-6d9aa1899157.png',
       varieties: ['Turmeric', 'Coriander', 'Cumin', 'Red Chili'],
       whatsappText: 'Hi%2C%20I%20want%20a%20quote%20for%20Aromatic%20Spices%20from%20HKS%20Provisions',
       link: '/products/spices'
@@ -46,7 +45,7 @@ const Products = () => {
       id: 'dry-fruits',
       name: 'Premium Dry Fruits',
       description: 'High-quality dry fruits and nuts sourced from the finest orchards. Perfect for health-conscious consumers and premium gifting.',
-      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/299ed258-beb5-4e59-b6cd-37ae04766615.png',
       varieties: ['Almonds', 'Cashews', 'Walnuts', 'Dates'],
       whatsappText: 'Hi%2C%20I%20want%20a%20quote%20for%20Premium%20Dry%20Fruits%20from%20HKS%20Provisions',
       link: '/products/dry-fruits'
