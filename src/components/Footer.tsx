@@ -124,16 +124,10 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-[#5353AB] pt-8 mt-12">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col items-center justify-center text-center space-y-2">
             <div className="text-[#DEDDF5] text-sm">
-              <p>© {currentYear} HKS Provisions. All Rights Reserved.</p>
+              <p>© 2025 HKS Provisions. All Rights Reserved.</p>
               <p className="mt-1">CIN & GSTIN available on request</p>
-            </div>
-            
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-[#DEDDF5]">
-              <span>FSSAI Certified</span>
-              <span>ISO Compliant</span>
-              <span>MSME Registered</span>
             </div>
           </div>
         </div>
