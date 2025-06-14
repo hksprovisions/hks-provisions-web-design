@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,7 +10,7 @@ const Products = () => {
       id: 'tea',
       name: 'Premium Tea',
       description: 'Hand-picked tea leaves from the finest gardens. Available in various grades including CTC, Orthodox, and specialty blends.',
-      image: '/lovable-uploads/bd8724d0-9378-4a03-8f8f-b6563548034c.png',
+      image: '/lovable-uploads/c8564f2f-2861-4ad0-bd39-8371977f3d12.png',
       varieties: ['CTC Tea', 'Orthodox Tea', 'Green Tea', 'Specialty Blends'],
       whatsappText: 'Hi%2C%20I%20want%20a%20quote%20for%20Premium%20Tea%20from%20HKS%20Provisions',
       link: '/products/tea'
