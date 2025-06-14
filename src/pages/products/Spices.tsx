@@ -102,7 +102,7 @@ const Spices = () => {
       id: 'cumin-powder',
       name: 'Cumin Powder',
       description: 'Fresh ground cumin powder with strong aroma and earthy flavor profile.',
-      image: '/lovable-uploads/e14370ef-0ad1-45f7-9d9e-9c87e9d52d85.png',
+      image: '/lovable-uploads/4c7d6ec7-247f-4328-8452-3a34f1d069fc.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     }
