@@ -28,7 +28,7 @@ const Spices = () => {
       id: 'cumin-seeds',
       name: 'Cumin Seeds (Jeera)',
       description: 'Premium quality cumin seeds with rich aroma and flavor, essential for Indian cuisine.',
-      // image: 'https://images.unsplash.com/photo-1609501676725-7186f734a4b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1609501676725-7186f734a4b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -36,7 +36,7 @@ const Spices = () => {
       id: 'fennel-seeds',
       name: 'Fennel Seeds (Saunf)',
       description: 'Sweet aromatic fennel seeds, excellent for digestive health and culinary applications.',
-      // image: 'https://images.unsplash.com/photo-1575514927003-8b5b6dc88a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1575514927003-8b5b6dc88a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -44,7 +44,7 @@ const Spices = () => {
       id: 'coriander-seeds',
       name: 'Coriander Seeds',
       description: 'High-quality coriander seeds with fresh citrusy aroma, perfect for spice blends.',
-      // image: 'https://images.unsplash.com/photo-1572613978277-58d8b6c0f446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1572613978277-58d8b6c0f446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -52,7 +52,7 @@ const Spices = () => {
       id: 'black-pepper',
       name: 'Black Pepper',
       description: 'Premium black pepper with high piperine content, the king of spices.',
-      // image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Cochin/Chennai'
     },
@@ -60,7 +60,7 @@ const Spices = () => {
       id: 'cardamom',
       name: 'Cardamom (Green/Black)',
       description: 'Premium cardamom pods with intense aroma, queen of spices for premium applications.',
-      // image: 'https://images.unsplash.com/photo-1607984272913-a55e15dae84e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1607984272913-a55e15dae84e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '100 Kg',
       port: 'Cochin/Chennai'
     },
@@ -68,7 +68,7 @@ const Spices = () => {
       id: 'mustard-seeds',
       name: 'Mustard Seeds',
       description: 'Yellow, black, and brown mustard seeds with pungent flavor and oil content.',
-      // image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Kandla'
     }
@@ -79,7 +79,7 @@ const Spices = () => {
       id: 'turmeric-powder',
       name: 'Turmeric Powder',
       description: 'High curcumin content turmeric powder with bright yellow color and medicinal properties.',
-      // image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Chennai/Tuticorin'
     },
@@ -87,7 +87,7 @@ const Spices = () => {
       id: 'red-chilli-powder',
       name: 'Red Chilli Powder',
       description: 'Premium red chilli powder with high color value and balanced heat levels.',
-      // image: 'https://images.unsplash.com/photo-1583221861045-4fe2e056b0a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1583221861045-4fe2e056b0a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Chennai/Guntur'
     },
@@ -95,7 +95,7 @@ const Spices = () => {
       id: 'coriander-powder',
       name: 'Coriander Powder',
       description: 'Finely ground coriander powder with fresh aroma and natural oil content.',
-      // image: 'https://images.unsplash.com/photo-1606406132267-a4c45b9a117b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1606406132267-a4c45b9a117b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -103,7 +103,7 @@ const Spices = () => {
       id: 'garam-masala',
       name: 'Garam Masala',
       description: 'Traditional blend of warming spices, expertly balanced for authentic Indian flavor.',
-      // image: 'https://images.unsplash.com/photo-1626132647228-fa5666d2b39d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1626132647228-fa5666d2b39d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '500 Kg',
       port: 'Any Major Port'
     },
@@ -111,7 +111,7 @@ const Spices = () => {
       id: 'cumin-powder',
       name: 'Cumin Powder',
       description: 'Fresh ground cumin powder with strong aroma and earthy flavor profile.',
-      // image: 'https://images.unsplash.com/photo-1608940085509-0c4c8ac59a5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1608940085509-0c4c8ac59a5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     }
@@ -122,7 +122,7 @@ const Spices = () => {
       id: 'chhole-masala',
       name: 'Chhole Masala',
       description: 'Authentic chickpea curry spice blend with perfect balance of flavors.',
-      // image: 'https://images.unsplash.com/photo-1611417968270-b4cdb8e70f7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1611417968270-b4cdb8e70f7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '500 Kg',
       port: 'Any Major Port'
     },
@@ -130,7 +130,7 @@ const Spices = () => {
       id: 'pav-bhaji-masala',
       name: 'Pav Bhaji Masala',
       description: 'Special blend for the popular Mumbai street food with rich color and taste.',
-      // image: 'https://images.unsplash.com/photo-1630363525148-d1bfb01cc37b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1630363525148-d1bfb01cc37b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '500 Kg',
       port: 'Any Major Port'
     },
@@ -138,7 +138,7 @@ const Spices = () => {
       id: 'meat-masala',
       name: 'Meat Masala',
       description: 'Premium meat spice blend with warming spices for authentic non-vegetarian dishes.',
-      // image: 'https://images.unsplash.com/photo-1626132646924-4b557b1b8c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1626132646924-4b557b1b8c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '500 Kg',
       port: 'Any Major Port'
     },
@@ -146,7 +146,7 @@ const Spices = () => {
       id: 'biryani-masala',
       name: 'Biryani Masala',
       description: 'Aromatic spice blend specially crafted for premium biryani preparations.',
-      // image: 'https://images.unsplash.com/photo-1627546186797-35c8e30b7af1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1627546186797-35c8e30b7af1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '500 Kg',
       port: 'Any Major Port'
     }
