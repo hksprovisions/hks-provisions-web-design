@@ -1,9 +1,9 @@
 
 import React from 'react';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Phone, MessageCircle, Mail } from 'lucide-react';
 
 const DryFruits = () => {
   const dryFruits = [
@@ -38,17 +38,17 @@ const DryFruits = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gray-50">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-[#2A2A6F] to-[#1A1A4F]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 mb-6 animate-fade-in">
+          <div className="text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
               Premium Dry Fruits
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up">
+            <p className="text-xl text-[#DEDDF5] max-w-3xl mx-auto">
               Discover our exceptional range of premium dry fruits, carefully sourced from the finest orchards 
               to bring you the highest quality nutrition and taste.
             </p>
@@ -63,32 +63,31 @@ const DryFruits = () => {
             {dryFruits.map((product, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="hover:shadow-lg transition-shadow duration-300 border border-gray-200"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-48 object-cover"
                     loading="lazy"
                   />
                 </div>
                 
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                  <CardTitle className="text-xl font-bold text-[#2A2A6F]">
                     {product.name}
                   </CardTitle>
                 </CardHeader>
                 
                 <CardContent className="p-6 pt-0">
-                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                     {product.description}
                   </p>
                   
                   <div className="mb-4">
-                    <h4 className="font-semibold text-slate-700 mb-2 text-sm">Specifications:</h4>
-                    <ul className="text-xs text-slate-600 space-y-1">
+                    <h4 className="font-semibold text-[#2A2A6F] mb-2 text-sm">Specifications:</h4>
+                    <ul className="text-xs text-gray-600 space-y-1">
                       {product.specifications.map((spec, idx) => (
                         <li key={idx}>• {spec}</li>
                       ))}
@@ -96,10 +95,10 @@ const DryFruits = () => {
                   </div>
                   
                   <div className="mb-4">
-                    <h4 className="font-semibold text-slate-700 mb-2 text-sm">Uses:</h4>
+                    <h4 className="font-semibold text-[#2A2A6F] mb-2 text-sm">Uses:</h4>
                     <div className="grid grid-cols-2 gap-1">
                       {product.uses.map((use, idx) => (
-                        <span key={idx} className="text-xs bg-blue-100 px-2 py-1 rounded text-blue-700">
+                        <span key={idx} className="text-xs bg-[#5353AB]/10 px-2 py-1 rounded text-[#2A2A6F]">
                           {use}
                         </span>
                       ))}
@@ -107,7 +106,7 @@ const DryFruits = () => {
                   </div>
                   
                   <Button 
-                    className="w-full gradient-primary text-white transition-all duration-300 transform hover:scale-105"
+                    className="w-full bg-[#5353AB] hover:bg-[#2A2A6F] text-white transition-colors"
                     onClick={() => window.open(`https://wa.me/917397248359?text=Hi%2C%20I%20want%20a%20quote%20for%20${product.name}%20from%20HKS%20Provisions`, '_blank')}
                   >
                     Get Quote
@@ -119,41 +118,7 @@ const DryFruits = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold text-slate-800 mb-4">Need More Information?</h3>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-            Our dry fruits experts are here to help you find the perfect products for your needs. 
-            Contact us today for personalized assistance and bulk pricing.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl transition-all transform hover:scale-105"
-              onClick={() => window.open('https://wa.me/917397248359?text=Hi%2C%20I%20need%20information%20about%20dry%20fruits%20from%20HKS%20Provisions', '_blank')}
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp Us
-            </Button>
-            <Button 
-              variant="outline"
-              className="border-slate-300 text-slate-700 hover:bg-slate-100 px-6 py-3 rounded-xl transition-all transform hover:scale-105"
-              onClick={() => window.open('tel:+917397248359')}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call Now
-            </Button>
-            <Button 
-              variant="outline"
-              className="border-slate-300 text-slate-700 hover:bg-slate-100 px-6 py-3 rounded-xl transition-all transform hover:scale-105"
-              onClick={() => window.open('mailto:info@hksprovisions.com')}
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              Email Us
-            </Button>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };
