@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Globe, Users, Award } from 'lucide-react';
@@ -124,8 +125,8 @@ const About = () => {
                     <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow">
                       <CardContent className="p-6">
                         <div className="flex items-center mb-3">
-                          <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                            {milestone.year.slice(-2)}
+                          <div className="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            {milestone.year}
                           </div>
                           <h4 className="text-xl font-bold text-gray-800 ml-4">{milestone.title}</h4>
                         </div>
