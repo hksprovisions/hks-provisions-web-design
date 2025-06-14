@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
@@ -100,6 +99,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-[#5353AB] mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[#DEDDF5]">+91 73972 48389</p>
+                  <p className="text-[#DEDDF5]">+91 86304 40226</p>
                   <p className="text-sm text-[#DEDDF5] opacity-80">Mon - Sat: 9 AM - 6 PM</p>
                 </div>
               </div>
