@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Globe, Users, Award } from 'lucide-react';
@@ -29,6 +28,11 @@ const About = () => {
       year: '2024',
       title: 'Global Reach',
       description: 'Now serving 50+ countries with our premium agricultural products.'
+    },
+    {
+      year: '2025',
+      title: 'Innovation & Growth',
+      description: 'Continuing to expand our reach and introduce innovative agricultural solutions for global markets.'
     }
   ];
 
