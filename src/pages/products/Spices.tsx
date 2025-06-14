@@ -94,7 +94,7 @@ const Spices = () => {
       id: 'coriander-powder',
       name: 'Coriander Powder',
       description: 'Finely ground coriander powder with fresh aroma and natural oil content.',
-      image: '/lovable-uploads/a056eb17-2324-4f00-8844-be4f432ab72c.png',
+      image: '/lovable-uploads/33cab5a7-135f-4480-87c1-01588a381afd.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
