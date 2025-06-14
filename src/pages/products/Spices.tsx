@@ -27,7 +27,7 @@ const Spices = () => {
       id: 'cumin-seeds',
       name: 'Cumin Seeds (Jeera)',
       description: 'Premium quality cumin seeds with rich aroma and flavor, essential for Indian cuisine.',
-      image: '/lovable-uploads/753aabcd-55a3-43e4-93e5-46623a56c0c1.png',
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
