@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -114,41 +113,6 @@ const Spices = () => {
       image: 'https://images.unsplash.com/photo-1608940085509-0c4c8ac59a5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       moq: '1 MT',
       port: 'Mundra/Chennai'
-    }
-  ];
-
-  const blendedSpices = [
-    {
-      id: 'chhole-masala',
-      name: 'Chhole Masala',
-      description: 'Authentic chickpea curry spice blend with perfect balance of flavors.',
-      image: 'https://images.unsplash.com/photo-1611417968270-b4cdb8e70f7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      moq: '500 Kg',
-      port: 'Any Major Port'
-    },
-    {
-      id: 'pav-bhaji-masala',
-      name: 'Pav Bhaji Masala',
-      description: 'Special blend for the popular Mumbai street food with rich color and taste.',
-      image: 'https://images.unsplash.com/photo-1630363525148-d1bfb01cc37b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      moq: '500 Kg',
-      port: 'Any Major Port'
-    },
-    {
-      id: 'meat-masala',
-      name: 'Meat Masala',
-      description: 'Premium meat spice blend with warming spices for authentic non-vegetarian dishes.',
-      image: 'https://images.unsplash.com/photo-1626132646924-4b557b1b8c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      moq: '500 Kg',
-      port: 'Any Major Port'
-    },
-    {
-      id: 'biryani-masala',
-      name: 'Biryani Masala',
-      description: 'Aromatic spice blend specially crafted for premium biryani preparations.',
-      image: 'https://images.unsplash.com/photo-1627546186797-35c8e30b7af1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      moq: '500 Kg',
-      port: 'Any Major Port'
     }
   ];
 
@@ -272,8 +236,6 @@ Thank you!`;
       <div className="bg-gray-50">
         {renderProductGrid(groundSpices, "Ground Spices", "Freshly ground spices with maximum flavor retention and purity")}
       </div>
-      
-      {renderProductGrid(blendedSpices, "Blended Spices", "Expertly crafted spice blends for authentic Indian cuisine")}
 
       <Footer />
     </div>
