@@ -17,6 +17,7 @@ import { SecurityUtils, setupGlobalErrorHandling } from "./utils/security";
 import { initializeProduction } from "./config/production";
 import SecurityWrapper from "./components/SecurityWrapper";
 import { AnimationUtils } from "./utils/animations";
+import useScrollToTop from "./hooks/useScrollToTop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,26 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+const AppContent = () => {
+  useScrollToTop();
+  
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/products/tea" element={<Tea />} />
+      <Route path="/products/rice" element={<Rice />} />
+      <Route path="/products/wheat" element={<Wheat />} />
+      <Route path="/products/spices" element={<Spices />} />
+      <Route path="/products/dry-fruits" element={<DryFruits />} />
+      <Route path="/products/:category/:subcategory/:product" element={<ProductDetail />} />
+      <Route path="/products/:category/:product" element={<ProductDetail />} />
+      <Route path="/products/:category" element={<ProductDetail />} />
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
 
 const App = () => {
   useEffect(() => {
@@ -57,19 +78,7 @@ const App = () => {
         <Sonner />
         <SecurityWrapper>
           <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/products/tea" element={<Tea />} />
-              <Route path="/products/rice" element={<Rice />} />
-              <Route path="/products/wheat" element={<Wheat />} />
-              <Route path="/products/spices" element={<Spices />} />
-              <Route path="/products/dry-fruits" element={<DryFruits />} />
-              <Route path="/products/:category/:subcategory/:product" element={<ProductDetail />} />
-              <Route path="/products/:category/:product" element={<ProductDetail />} />
-              <Route path="/products/:category" element={<ProductDetail />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <AppContent />
           </BrowserRouter>
         </SecurityWrapper>
       </TooltipProvider>

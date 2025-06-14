@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,8 +40,13 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation - Centered with space between items */}
-          <nav className="hidden lg:flex items-center justify-center flex-1 space-x-12">
+          {/* Search Bar - Desktop */}
+          <div className="hidden lg:block flex-1 max-w-md mx-8">
+            <SearchBar />
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
             <button onClick={() => scrollToSection('home')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Home</button>
             <button onClick={() => scrollToSection('about')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">About Us</button>
             
@@ -73,11 +78,12 @@ const Header = () => {
             <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Quality & Process</button>
             <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Certifications</button>
             <button onClick={() => scrollToSection('why-hks')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Why HKS?</button>
+            <button onClick={() => scrollToSection('faq')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">FAQ</button>
             <button onClick={() => scrollToSection('contact')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Contact</button>
           </nav>
 
-          {/* Get Quote Button - Separate from centered navigation */}
-          <div className="hidden lg:block">
+          {/* Get Quote Button */}
+          <div className="hidden lg:block ml-4">
             <Button 
               className="gradient-primary text-white px-6 py-2 rounded-xl transition-all transform hover:scale-105 shadow-professional"
               onClick={() => window.open('https://wa.me/917397248359?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
@@ -98,6 +104,11 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-slate-200 bg-white/95 backdrop-blur-lg">
+            {/* Mobile Search */}
+            <div className="mb-4 px-2">
+              <SearchBar />
+            </div>
+            
             <nav className="flex flex-col space-y-4">
               <button onClick={() => scrollToSection('home')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Home</button>
               <button onClick={() => scrollToSection('about')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">About Us</button>
@@ -117,6 +128,7 @@ const Header = () => {
               <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Quality & Process</button>
               <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Certifications</button>
               <button onClick={() => scrollToSection('why-hks')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Why HKS?</button>
+              <button onClick={() => scrollToSection('faq')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">FAQ</button>
               <button onClick={() => scrollToSection('contact')} className="text-slate-700 hover:text-blue-600 transition-colors px-2 py-1 text-left">Contact</button>
               <Button 
                 className="gradient-primary text-white mt-4 mx-2 rounded-xl"
