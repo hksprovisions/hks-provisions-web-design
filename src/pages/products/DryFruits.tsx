@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,28 +9,28 @@ const DryFruits = () => {
     {
       name: 'Premium Almonds',
       description: 'High-quality California almonds, rich in nutrients and perfect for snacking or cooking.',
-      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1553909489-cd47e0ef937f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       specifications: ['Size: 18-20mm', 'Moisture: <6%', 'Origin: California', 'Grade: Premium'],
       uses: ['Direct consumption', 'Bakery products', 'Confectionery', 'Health foods']
     },
     {
       name: 'Cashew Nuts',
       description: 'Premium quality cashews sourced from the finest plantations.',
-      image: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1606819541163-a4f8d4d4b565?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       specifications: ['Grade: W240/W320', 'Moisture: <5%', 'Origin: India/Vietnam', 'Color: Natural White'],
       uses: ['Snacks', 'Cooking', 'Sweets', 'Trail mixes']
     },
     {
       name: 'Walnuts',
       description: 'Fresh and crunchy walnuts with excellent nutritional value.',
-      image: 'https://images.unsplash.com/photo-1553459027-b6c52bbead1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1567149424-7ae6bad5a9c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       specifications: ['Size: Large halves', 'Moisture: <8%', 'Origin: Kashmir/California', 'Grade: Premium'],
       uses: ['Direct consumption', 'Baking', 'Desserts', 'Health supplements']
     },
     {
       name: 'Dates',
       description: 'Sweet and nutritious dates, perfect for natural energy boost.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1571060516230-8f8c2b03bb85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       specifications: ['Variety: Medjool/Deglet', 'Moisture: 18-23%', 'Origin: Middle East', 'Grade: Premium'],
       uses: ['Direct consumption', 'Natural sweetener', 'Energy bars', 'Traditional sweets']
     }
