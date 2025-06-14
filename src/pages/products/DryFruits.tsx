@@ -42,20 +42,14 @@ const DryFruits = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-[#2A2A6F] to-[#1A1A4F] relative">
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/lovable-uploads/299ed258-beb5-4e59-b6cd-37ae04766615.png')`
-          }}
-        ></div>
+      <section className="pt-20 pb-12 bg-gradient-to-r from-[#2A2A6F] via-[#5353AB] to-[#362F6F] relative">
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
               Premium Dry Fruits
             </h1>
-            <p className="text-xl text-[#DEDDF5] max-w-3xl mx-auto">
+            <p className="text-xl text-white opacity-90 max-w-3xl mx-auto">
               Discover our exceptional range of premium dry fruits, carefully sourced from the finest orchards 
               to bring you the highest quality nutrition and taste.
             </p>
