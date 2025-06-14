@@ -80,7 +80,6 @@ const Products = () => {
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
               <CardContent className="p-6">
@@ -105,7 +104,7 @@ const Products = () => {
                 
                 <div className="flex gap-2">
                   <Button 
-                    className="flex-1 bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 transform group-hover:scale-105"
+                    className="flex-1 bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300"
                     onClick={() => window.location.href = product.link}
                   >
                     View Details

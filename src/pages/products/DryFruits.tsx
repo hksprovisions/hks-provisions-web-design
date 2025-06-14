@@ -1,21 +1,11 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { ArrowLeft, Phone, MessageCircle, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const DryFruits = () => {
-  const [customOrder, setCustomOrder] = useState({
-    productName: '',
-    quantity: '',
-    specifications: '',
-    contactInfo: ''
-  });
-
   const dryFruits = [
     {
       name: 'Premium Almonds',
@@ -46,12 +36,6 @@ const DryFruits = () => {
       uses: ['Direct consumption', 'Natural sweetener', 'Energy bars', 'Traditional sweets']
     }
   ];
-
-  const handleCustomOrderSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const whatsappMessage = `Hi, I want to place a custom order for dry fruits:%0A%0AProduct: ${customOrder.productName}%0AQuantity: ${customOrder.quantity}%0ASpecifications: ${customOrder.specifications}%0AContact: ${customOrder.contactInfo}`;
-    window.open(`https://wa.me/917397248359?text=${whatsappMessage}`, '_blank');
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-orange-50">
@@ -134,69 +118,6 @@ const DryFruits = () => {
             </Card>
           ))}
         </div>
-
-        {/* Custom Order Section */}
-        <Card className="max-w-2xl mx-auto">
-          <CardHeader>
-            <CardTitle className="text-center text-orange-700">Custom Dry Fruits Order</CardTitle>
-            <p className="text-center text-gray-600">
-              Looking for specific dry fruits or custom packaging? Let us know your requirements!
-            </p>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleCustomOrderSubmit} className="space-y-4">
-              <div>
-                <Label htmlFor="productName">Product Name</Label>
-                <Input
-                  id="productName"
-                  value={customOrder.productName}
-                  onChange={(e) => setCustomOrder({...customOrder, productName: e.target.value})}
-                  placeholder="e.g., Premium Mixed Dry Fruits"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="quantity">Quantity Required</Label>
-                <Input
-                  id="quantity"
-                  value={customOrder.quantity}
-                  onChange={(e) => setCustomOrder({...customOrder, quantity: e.target.value})}
-                  placeholder="e.g., 100 kg, 50 boxes"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="specifications">Special Requirements</Label>
-                <Textarea
-                  id="specifications"
-                  value={customOrder.specifications}
-                  onChange={(e) => setCustomOrder({...customOrder, specifications: e.target.value})}
-                  placeholder="Please specify packaging, quality grade, origin preferences, etc."
-                  className="min-h-[100px]"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="contactInfo">Your Contact Information</Label>
-                <Input
-                  id="contactInfo"
-                  value={customOrder.contactInfo}
-                  onChange={(e) => setCustomOrder({...customOrder, contactInfo: e.target.value})}
-                  placeholder="Your name, company, phone number"
-                  required
-                />
-              </div>
-              
-              <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Send Custom Order via WhatsApp
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
 
         {/* Contact Section */}
         <div className="mt-12 text-center">

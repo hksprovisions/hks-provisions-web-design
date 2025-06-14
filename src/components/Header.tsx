@@ -40,8 +40,8 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered with space between items */}
+          <nav className="hidden lg:flex items-center justify-center flex-1 space-x-12">
             <button onClick={() => scrollToSection('home')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Home</button>
             <button onClick={() => scrollToSection('about')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">About Us</button>
             
@@ -74,14 +74,17 @@ const Header = () => {
             <button onClick={() => scrollToSection('certifications')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Certifications</button>
             <button onClick={() => scrollToSection('why-hks')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Why HKS?</button>
             <button onClick={() => scrollToSection('contact')} className="text-slate-700 hover:text-blue-600 transition-colors font-medium">Contact</button>
-            
+          </nav>
+
+          {/* Get Quote Button - Separate from centered navigation */}
+          <div className="hidden lg:block">
             <Button 
               className="gradient-primary text-white px-6 py-2 rounded-xl transition-all transform hover:scale-105 shadow-professional"
               onClick={() => window.open('https://wa.me/917397248359?text=Hi%2C%20I%20want%20a%20quote%20from%20HKS%20Provisions', '_blank')}
             >
               Get Quote
             </Button>
-          </nav>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
