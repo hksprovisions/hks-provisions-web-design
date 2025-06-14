@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +11,7 @@ import Tea from "./pages/products/Tea";
 import Rice from "./pages/products/Rice";
 import Wheat from "./pages/products/Wheat";
 import Spices from "./pages/products/Spices";
+import DryFruits from "./pages/products/DryFruits";
 import ProductDetail from "./pages/products/ProductDetail";
 import { SecurityUtils, setupGlobalErrorHandling } from "./utils/security";
 import { initializeProduction } from "./config/production";
@@ -61,6 +63,7 @@ const App = () => {
               <Route path="/products/rice" element={<Rice />} />
               <Route path="/products/wheat" element={<Wheat />} />
               <Route path="/products/spices" element={<Spices />} />
+              <Route path="/products/dry-fruits" element={<DryFruits />} />
               <Route path="/products/:category/:subcategory/:product" element={<ProductDetail />} />
               <Route path="/products/:category/:product" element={<ProductDetail />} />
               <Route path="/products/:category" element={<ProductDetail />} />

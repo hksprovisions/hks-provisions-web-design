@@ -1,8 +1,8 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import { Shield } from 'lucide-react';
 
 const Products = () => {
   const products = [
@@ -41,6 +41,15 @@ const Products = () => {
       varieties: ['Turmeric', 'Coriander', 'Cumin', 'Red Chili'],
       whatsappText: 'Hi%2C%20I%20want%20a%20quote%20for%20Aromatic%20Spices%20from%20HKS%20Provisions',
       link: '/products/spices'
+    },
+    {
+      id: 'dry-fruits',
+      name: 'Premium Dry Fruits',
+      description: 'High-quality dry fruits and nuts sourced from the finest orchards. Perfect for health-conscious consumers and premium gifting.',
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      varieties: ['Almonds', 'Cashews', 'Walnuts', 'Dates'],
+      whatsappText: 'Hi%2C%20I%20want%20a%20quote%20for%20Premium%20Dry%20Fruits%20from%20HKS%20Provisions',
+      link: '/products/dry-fruits'
     }
   ];
 
@@ -61,7 +70,7 @@ const Products = () => {
           {products.map((product, index) => (
             <Card 
               key={product.id} 
-              className="product-item card-animate group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden hover-enhance"
+              className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden">
@@ -72,12 +81,6 @@ const Products = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-600/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-2 right-2">
-                  <div className="security-badge">
-                    <Shield className="w-3 h-3" />
-                    Verified
-                  </div>
-                </div>
               </div>
               
               <CardContent className="p-6">
@@ -93,7 +96,7 @@ const Products = () => {
                   <h4 className="font-semibold text-gray-700 mb-2 text-sm">Varieties:</h4>
                   <div className="grid grid-cols-2 gap-1">
                     {product.varieties.map((variety, idx) => (
-                      <span key={idx} className="text-xs bg-purple-100 px-2 py-1 rounded text-purple-700 hover-enhance">
+                      <span key={idx} className="text-xs bg-purple-100 px-2 py-1 rounded text-purple-700">
                         {variety}
                       </span>
                     ))}
@@ -102,7 +105,7 @@ const Products = () => {
                 
                 <div className="flex gap-2">
                   <Button 
-                    className="flex-1 bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 transform group-hover:scale-105 hover-enhance"
+                    className="flex-1 bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 transform group-hover:scale-105"
                     onClick={() => window.location.href = product.link}
                   >
                     View Details
@@ -110,7 +113,7 @@ const Products = () => {
                   <Button 
                     variant="outline"
                     size="icon"
-                    className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white hover-enhance"
+                    className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
                     onClick={() => window.open(`https://wa.me/917397248359?text=${product.whatsappText}`, '_blank', 'noopener,noreferrer')}
                   >
                     <ArrowRight className="w-4 h-4" />
