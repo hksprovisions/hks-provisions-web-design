@@ -27,7 +27,7 @@ const Spices = () => {
       id: 'cumin-seeds',
       name: 'Cumin Seeds (Jeera)',
       description: 'Premium quality cumin seeds with rich aroma and flavor, essential for Indian cuisine.',
-      image: 'https://images.unsplash.com/photo-1609501676725-7186f734a4b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/753aabcd-55a3-43e4-93e5-46623a56c0c1.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -35,7 +35,7 @@ const Spices = () => {
       id: 'fennel-seeds',
       name: 'Fennel Seeds (Saunf)',
       description: 'Sweet aromatic fennel seeds, excellent for digestive health and culinary applications.',
-      image: 'https://images.unsplash.com/photo-1575514927003-8b5b6dc88a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/904e955d-b148-4dc3-b7c3-f809b28e9e33.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -43,7 +43,7 @@ const Spices = () => {
       id: 'coriander-seeds',
       name: 'Coriander Seeds',
       description: 'High-quality coriander seeds with fresh citrusy aroma, perfect for spice blends.',
-      image: 'https://images.unsplash.com/photo-1572613978277-58d8b6c0f446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/b4f8a8db-bac8-4366-9b44-6a2d0504463b.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -51,7 +51,7 @@ const Spices = () => {
       id: 'black-pepper',
       name: 'Black Pepper',
       description: 'Premium black pepper with high piperine content, the king of spices.',
-      image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/ae4756d0-d3f4-454c-8a55-4c7543615c06.png',
       moq: '1 MT',
       port: 'Cochin/Chennai'
     },
@@ -59,7 +59,7 @@ const Spices = () => {
       id: 'cardamom',
       name: 'Cardamom (Green/Black)',
       description: 'Premium cardamom pods with intense aroma, queen of spices for premium applications.',
-      image: 'https://images.unsplash.com/photo-1607984272913-a55e15dae84e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/af679c39-3435-48ec-8dbd-367cafff633d.png',
       moq: '100 Kg',
       port: 'Cochin/Chennai'
     },
@@ -67,7 +67,7 @@ const Spices = () => {
       id: 'mustard-seeds',
       name: 'Mustard Seeds',
       description: 'Yellow, black, and brown mustard seeds with pungent flavor and oil content.',
-      image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/ca8eb102-9ca3-489f-bcbd-64fa06693f31.png',
       moq: '1 MT',
       port: 'Mundra/Kandla'
     }
@@ -86,7 +86,7 @@ const Spices = () => {
       id: 'red-chilli-powder',
       name: 'Red Chilli Powder',
       description: 'Premium red chilli powder with high color value and balanced heat levels.',
-      image: 'https://images.unsplash.com/photo-1583221861045-4fe2e056b0a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/76ed1659-684f-4da1-949e-5c96dd60e7d4.png',
       moq: '1 MT',
       port: 'Chennai/Guntur'
     },
@@ -94,7 +94,7 @@ const Spices = () => {
       id: 'coriander-powder',
       name: 'Coriander Powder',
       description: 'Finely ground coriander powder with fresh aroma and natural oil content.',
-      image: 'https://images.unsplash.com/photo-1606406132267-a4c45b9a117b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/a056eb17-2324-4f00-8844-be4f432ab72c.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     },
@@ -110,7 +110,7 @@ const Spices = () => {
       id: 'cumin-powder',
       name: 'Cumin Powder',
       description: 'Fresh ground cumin powder with strong aroma and earthy flavor profile.',
-      image: 'https://images.unsplash.com/photo-1608940085509-0c4c8ac59a5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/e14370ef-0ad1-45f7-9d9e-9c87e9d52d85.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
     }
