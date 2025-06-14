@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -28,7 +27,7 @@ const Wheat = () => {
       id: 'lokwan',
       name: 'Lokwan Wheat',
       description: 'Premium quality wheat with excellent milling characteristics and high protein content.',
-      // image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/2fb14baa-2c77-4461-890a-6d33df1e945a.png',
       moq: '1 Container (25 MT)',
       port: 'Mundra/JNPT'
     },
@@ -36,7 +35,7 @@ const Wheat = () => {
       id: 'sharbati',
       name: 'Sharbati Wheat',
       description: 'Golden color wheat with superior milling quality, ideal for chapatis and breads.',
-      // image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/e05226a2-a3fb-46ae-afeb-d608ef404783.png',
       moq: '1 Container (25 MT)',
       port: 'Mundra/JNPT'
     },
@@ -44,7 +43,7 @@ const Wheat = () => {
       id: 'mp-grade-a',
       name: 'MP Grade A',
       description: 'High-grade Madhya Pradesh wheat with consistent quality and good protein levels.',
-      // image: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/704e844d-9bb4-4946-979a-3c3359130b3a.png',
       moq: '1 Container (25 MT)',
       port: 'Mundra/JNPT'
     },
@@ -52,7 +51,7 @@ const Wheat = () => {
       id: 'durum-wheat',
       name: 'Durum Wheat',
       description: 'Hard wheat variety perfect for pasta, semolina, and premium food products.',
-      // image: 'https://images.unsplash.com/photo-1592568544459-2b4f5b2eb7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/96a50be2-1241-40f3-872b-d2a41fb6695d.png',
       moq: '1 Container (25 MT)',
       port: 'Mundra/JNPT'
     },
@@ -60,7 +59,7 @@ const Wheat = () => {
       id: 'rajasthan-golden',
       name: 'Rajasthan Golden',
       description: 'Premium golden wheat from Rajasthan with excellent baking properties.',
-      // image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/672ecc11-68c1-4ad1-a237-1eacc8ad4784.png',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Kandla'
     },
@@ -68,7 +67,7 @@ const Wheat = () => {
       id: 'gujarat-wheat',
       name: 'Gujarat Wheat',
       description: 'High-quality wheat from Gujarat with good test weight and protein content.',
-      // image: 'https://images.unsplash.com/photo-1533725797859-97b6fed72a7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/61555819-6819-40f9-873f-3f667e202dc6.png',
       moq: '1 Container (25 MT)',
       port: 'Mundra/Kandla'
     }
@@ -79,7 +78,7 @@ const Wheat = () => {
       id: 'whole-wheat-flour',
       name: 'Whole Wheat Flour (Atta)',
       description: 'Nutritious whole wheat flour retaining all the natural fiber and nutrients.',
-      // image: 'https://images.unsplash.com/photo-1625869016774-3d015c5d8e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/0daab5ff-50a3-485a-8fcc-02062f024a5b.png',
       moq: '1 MT',
       port: 'Any Major Port'
     },
@@ -87,7 +86,7 @@ const Wheat = () => {
       id: 'maida',
       name: 'Maida (Refined Flour)',
       description: 'Fine refined flour perfect for bakery products, pastries, and confectionery.',
-      // image: 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/1c5e7dc4-566d-4742-a87b-8a60e51b349c.png',
       moq: '1 MT',
       port: 'Any Major Port'
     },
@@ -95,7 +94,7 @@ const Wheat = () => {
       id: 'semolina',
       name: 'Semolina (Sooji/Rawa)',
       description: 'Coarse wheat flour ideal for making pasta, upma, and various Indian dishes.',
-      // image: 'https://images.unsplash.com/photo-1595505248794-66a3b74a7b97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/abc33814-1dd2-4162-8535-a18c097f0664.png',
       moq: '1 MT',
       port: 'Any Major Port'
     },
@@ -103,7 +102,7 @@ const Wheat = () => {
       id: 'wheat-bran',
       name: 'Wheat Bran',
       description: 'Nutrient-rich outer layer of wheat, excellent for animal feed and health foods.',
-      // image: 'https://images.unsplash.com/photo-1585418649584-38093da13e10?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/a1893b49-0485-420c-ab6f-d691155713cc.png',
       moq: '1 MT',
       port: 'Any Major Port'
     }
