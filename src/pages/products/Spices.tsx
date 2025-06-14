@@ -78,7 +78,7 @@ const Spices = () => {
       id: 'turmeric-powder',
       name: 'Turmeric Powder',
       description: 'High curcumin content turmeric powder with bright yellow color and medicinal properties.',
-      image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/1bef739c-e04f-4aea-94dc-f40b775e19e5.png',
       moq: '1 MT',
       port: 'Chennai/Tuticorin'
     },
@@ -97,14 +97,6 @@ const Spices = () => {
       image: '/lovable-uploads/a056eb17-2324-4f00-8844-be4f432ab72c.png',
       moq: '1 MT',
       port: 'Mundra/Chennai'
-    },
-    {
-      id: 'garam-masala',
-      name: 'Garam Masala',
-      description: 'Traditional blend of warming spices, expertly balanced for authentic Indian flavor.',
-      image: 'https://images.unsplash.com/photo-1626132647228-fa5666d2b39d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      moq: '500 Kg',
-      port: 'Any Major Port'
     },
     {
       id: 'cumin-powder',
