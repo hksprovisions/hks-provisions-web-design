@@ -77,7 +77,7 @@ Thank you!
     {
       icon: <Phone className="w-6 h-6 text-[#5353AB]" />,
       title: 'Phone',
-      details: '+91 73972 48359',
+      details: '+91 73972 48359, +91 86304 40226',
       action: () => window.open('tel:+917397248359')
     },
     {
