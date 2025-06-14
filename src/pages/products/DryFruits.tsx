@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -41,8 +42,15 @@ const DryFruits = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-[#2A2A6F] to-[#1A1A4F]">
-        <div className="container mx-auto px-4">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-[#2A2A6F] to-[#1A1A4F] relative">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/lovable-uploads/299ed258-beb5-4e59-b6cd-37ae04766615.png')`
+          }}
+        ></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
               Premium Dry Fruits
